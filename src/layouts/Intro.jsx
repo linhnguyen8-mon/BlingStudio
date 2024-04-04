@@ -11,9 +11,12 @@ const Intro = () => {
     const duplicateContent = () => {
         const container = document.querySelector(".items");
         if (container) {
-            for (let i = 0; i < 5; i++) {
-                const contentToDuplicate = container.children;
-                for (let j = 0; j < contentToDuplicate.length; j++) {
+            const contentToDuplicate = container.children;
+            const originalContentCount = contentToDuplicate.length;
+
+            for (let i = 0; i < 4; i++) {
+                // Reduce the loop count to prevent infinite duplication
+                for (let j = 0; j < originalContentCount; j++) {
                     const clone = contentToDuplicate[j].cloneNode(true);
                     container.appendChild(clone);
                 }
