@@ -1,0 +1,74 @@
+#root {
+    /* max-width: 1280px; */
+    margin: 0 auto;
+    /* padding: 2rem; */
+}
+body {
+    background-color: #f5f6ff;
+}
+@keyframes moveUpDown {
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+}
+
+.animate-moveUpDown {
+    animation: moveUpDown 8s infinite alternate; /* Adjust duration and other parameters as needed */
+}
+.animate-moveUpDown-fast {
+    animation: moveUpDown 2s infinite alternate; /* Adjust duration and other parameters as needed */
+}
+@keyframes glow {
+    0% {
+        opacity: 0.9;
+        transform: scale(1);
+        filter: drop-shadow(0 0 5px #ffffff00);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 10px #156fe575);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: drop-shadow(0 0 15px #156fe5);
+    }
+}
+
+.glow {
+    animation: glow 2000ms infinite alternate;
+}
+
+@keyframes slideLeftRight {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.animate-slideLeftRight {
+    animation: slideLeftRight 200s linear infinite;
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+.animate-moveUp {
+    animation: moveUp 1s ease-out;
+}
