@@ -2,13 +2,32 @@ import { useEffect, useRef, useState } from "react";
 import { useTransform, useScroll, motion } from "framer-motion";
 import StarBlack from "../assets/StarBlack.svg";
 import Lenis from "@studio-freight/lenis";
-
-const images = [];
-
-for (let i = 1; i <= 12; i++) {
-    images.push(`../assets/img/img_${i}.png`);
-}
-
+import img_1 from "../assets/img/img_1.png";
+import img_2 from "../assets/img/img_2.png";
+import img_3 from "../assets/img/img_3.png";
+import img_4 from "../assets/img/img_4.png";
+import img_5 from "../assets/img/img_5.png";
+import img_6 from "../assets/img/img_6.png";
+import img_7 from "../assets/img/img_7.png";
+import img_8 from "../assets/img/img_8.png";
+import img_9 from "../assets/img/img_9.png";
+import img_10 from "../assets/img/img_10.png";
+import img_11 from "../assets/img/img_11.png";
+import img_12 from "../assets/img/img_12.png";
+const images = [
+    img_1,
+    img_2,
+    img_3,
+    img_4,
+    img_5,
+    img_6,
+    img_7,
+    img_8,
+    img_9,
+    img_10,
+    img_11,
+    img_12,
+];
 const OurWork = () => {
     const galleryRef = useRef(null);
     const [dimensions, setDimensions] = useState({ width: 0, height: 0 });

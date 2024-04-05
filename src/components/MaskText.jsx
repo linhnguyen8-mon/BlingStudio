@@ -14,16 +14,18 @@ const MaskText = ({ phrases, textSize }) => {
     return (
         <div ref={ref}>
             {phrases.map((phrase, index) => (
-                <motion.p
-                    key={index}
-                    className={`text-${textSize} font-bold leading-snug overflow-hidden`}
-                    custom={index}
-                    variants={textAnimation}
-                    initial="initial"
-                    animate={inView ? "enter" : ""}
-                >
-                    {phrase}
-                </motion.p>
+                <div key={index} className="overflow-hidden">
+                    <motion.p
+                        className={`text-${textSize} font-bold leading-snug `}
+                        custom={index}
+                        variants={textAnimation}
+                        initial="initial"
+                        animate={inView ? "enter" : ""}
+                        style={{ overflow: "hidden" }}
+                    >
+                        {phrase}
+                    </motion.p>
+                </div>
             ))}
         </div>
     );

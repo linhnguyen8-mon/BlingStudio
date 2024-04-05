@@ -2,6 +2,7 @@ import { H1, H2, H3 } from "../components/Heading";
 import arrow from "../assets/arrow.svg";
 import img_header_2 from "../assets/img_header_2.png";
 import MaskText from "../components/MaskText";
+import React, { useState } from "react";
 
 const Service = () => {
     const servicePhrases = [
@@ -10,12 +11,12 @@ const Service = () => {
     ];
 
     return (
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center py-20">
             <div className="w-6/12 py-16 flex-col gap-4 inline-flex font-main">
-                <h1 className="text-brand text-4xl font-bold leading-loose">
+                <div className="text-brand font-bold leading-loose">
                     Our service
-                </h1>
-                <MaskText phrases={servicePhrases} size="5xl" />
+                </div>
+                <MaskText phrases={servicePhrases} textSize="5xl" />
                 <ServiceList />
             </div>
         </div>
@@ -36,24 +37,49 @@ const ServiceList = () => (
 );
 
 const ServiceItem = ({ label, href, imageSrc }) => {
+    const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
+    const [showImage, setShowImage] = useState(false);
+
+    const handleMouseMove = (e) => {
+        const offsetX = -700; // Adjust this value as needed
+        const offsetY = -400;
+        setImagePosition({ x: e.clientX + offsetX, y: e.clientY + offsetY });
+        setShowImage(true);
+        setTimeout(() => {
+            setShowImage(false);
+        }, 10000);
+    };
+    const handleMouseLeave = () => {
+        // Clear the timeout to prevent hiding the image when the cursor leaves
+        setShowImage(false);
+    };
     return (
         <a
             href={href}
             target="_blank"
             rel="noopener noreferrer"
             className="relative w-full flex items-center justify-between p-6 group rounded-xl hover:bg-gray-200"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
         >
-            <p className="group-hover:font-bold">{label}</p>
-            <img
-                src={imageSrc}
-                alt=""
-                className="hidden absolute w-64 h-64 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            />
-            <div className="w-8 h-8 bg-transparent rounded-full flex items-center justify-center group-hover:bg-brand">
+            <H3 className="group-hover:font-bold">{label}</H3>
+            {showImage && (
+                <div
+                    className="absolute rounded-lg"
+                    style={{ left: imagePosition.x, top: imagePosition.y }}
+                >
+                    <img
+                        src={imageSrc}
+                        alt=""
+                        className="z-100 w-auto h-auto max-w-xs max-h-xs rounded-lg"
+                    />
+                </div>
+            )}
+            <div className="w-10 h-10 bg-transparent rounded-full flex items-center justify-center group-hover:bg-brand">
                 <img
                     src={arrow}
                     alt=""
-                    className="hidden group-hover:block filter group-hover:brightness-0 group-hover:invert"
+                    className="hidden group-hover:block filter brightness-0 invert"
                 />
             </div>
         </a>

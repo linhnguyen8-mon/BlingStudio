@@ -2,7 +2,6 @@ import Star from "../assets/Star.svg";
 import { H1 } from "../components/Heading";
 import { useState, useEffect } from "react";
 import MaskText from "../components/MaskText";
-import NavBar from "../components/Navbar";
 
 const Header = () => {
     const phrases = ["Make the w --- rld", "full of bling"];
@@ -19,12 +18,10 @@ const Header = () => {
 
     return (
         <div className="  text-primary flex justify-center relative " id="home">
-            <NavBar />
-
             <div className="flex flex-col items-center mt-80">
                 {/* Text */}
                 <div className="text-center relative">
-                    <MaskText phrases={phrases} size="8xl" />
+                    <MaskText phrases={phrases} textSize="8xl" />
                     {showDiv && (
                         <div className="absolute w-[140px] h-[54px] bg-brand rounded-full top-[50px] right-[140px] animate-moveUp "></div>
                     )}{" "}

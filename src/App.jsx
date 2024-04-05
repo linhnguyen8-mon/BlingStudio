@@ -24,11 +24,11 @@ function App() {
                 <Element name="header">
                     <Header />
                 </Element>
-                <Element name="service">
-                    <Service />
-                </Element>
                 <Element name="whyus">
                     <Intro />
+                </Element>
+                <Element name="service">
+                    <Service />
                 </Element>
                 <Element name="howitwork">
                     <HowItWork />
