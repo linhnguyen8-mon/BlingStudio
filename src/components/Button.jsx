@@ -10,13 +10,24 @@ export const IconButton = ({ svg, name, className, onClick }) => {
         </button>
     );
 };
-
-export const StyledButton = ({ name, className, classNameChild }) => {
+export const Button = ({ name, className, onClick }) => {
     return (
-        <button className={`px-5 pt-[11px] pb-2.5 rounded-full ${className}`}>
-            <span
-                className={`uppercase text-center text-sm font-bold ${classNameChild}`}
-            >
+        <button
+            className={`bg-brand inline-flex items-center justify-center h-12 px-6 rounded-full gap-2.5 font-main ${className} transition duration-300 ease-in-out hover:brightness-90`}
+            onClick={onClick}
+        >
+            <span className="text-white text-base font-bold">{name}</span>
+        </button>
+    );
+};
+
+export const StyledButton = ({ name, className, onClick }) => {
+    return (
+        <button
+            className={`px-5 pt-[11px] pb-2.5 rounded-full ${className}`}
+            onClick={onClick} // Add onClick handler to the button
+        >
+            <span className="uppercase text-center text-sm font-bold">
                 {name}
             </span>
         </button>

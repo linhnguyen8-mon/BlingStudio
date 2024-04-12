@@ -56,12 +56,17 @@ const OurWork = () => {
     });
 
     const columnYs = [
-        useTransform(scrollYProgress, [0, 1], [0, -height * 2.5]),
-        useTransform(scrollYProgress, [0, 1], [0, height * 1.5]),
-        useTransform(scrollYProgress, [0, 1], [0, -height * 2.2]),
-        useTransform(scrollYProgress, [0, 1], [0, height * 1]),
+        useTransform(scrollYProgress, [0, 1], [0, -height * 1]),
+        useTransform(scrollYProgress, [0, 1], [0, height * 0.1]),
+        useTransform(scrollYProgress, [0, 1], [0, -height * 1.2]),
+        useTransform(scrollYProgress, [0, 1], [0, height * 0.1]),
     ];
-
+    const topPositions = {
+        0: "-720%",
+        1: "220%",
+        2: "-230%",
+        3: "820%",
+    };
     return (
         <div>
             <div className="h-[78px] py-3 bg-white">
@@ -75,22 +80,14 @@ const OurWork = () => {
                 </div>
             </div>
             <div
-                className="grid grid-cols-4 h-[900px] relative gap-3 overflow-hidden"
+                className="grid grid-cols-4 h-[1200px] relative gap-3 overflow-hidden"
                 ref={galleryRef}
             >
                 {Array.from({ length: 4 }).map((_, i) => (
                     <div className="relative" key={i}>
                         <Column
                             images={images.slice(i * 3, i * 3 + 3)}
-                            className={`top-${
-                                i === 0
-                                    ? "-220%"
-                                    : i === 2
-                                    ? "-230%"
-                                    : i === 3
-                                    ? "80%"
-                                    : "120%"
-                            }`}
+                            className={`top-${topPositions[i]}`}
                             y={columnYs[i]}
                         />
                     </div>

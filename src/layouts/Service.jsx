@@ -11,8 +11,11 @@ const Service = () => {
     ];
 
     return (
-        <div className="flex items-center justify-center py-20">
-            <div className="w-6/12 py-16 flex-col gap-4 inline-flex font-main">
+        <div
+            className="w-full
+         flex items-center justify-center py-10"
+        >
+            <div className=" container w-8/12 py-16 pb-4 flex-col gap-4 inline-flex font-main">
                 <div className="text-brand font-bold leading-loose">
                     Our service
                 </div>
@@ -24,7 +27,7 @@ const Service = () => {
 };
 
 const ServiceList = () => (
-    <div className="pt-16">
+    <div className="pt-8">
         <ServiceItem
             label="Branding"
             href="https://phimdammy.com/video/la-chan-mien-dich-stay-by-my-side?tape=2"
@@ -41,8 +44,8 @@ const ServiceItem = ({ label, href, imageSrc }) => {
     const [showImage, setShowImage] = useState(false);
 
     const handleMouseMove = (e) => {
-        const offsetX = -700; // Adjust this value as needed
-        const offsetY = -400;
+        const offsetX = 20; // Adjust this value as needed
+        const offsetY = -100;
         setImagePosition({ x: e.clientX + offsetX, y: e.clientY + offsetY });
         setShowImage(true);
         setTimeout(() => {
@@ -62,16 +65,18 @@ const ServiceItem = ({ label, href, imageSrc }) => {
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
         >
-            <H3 className="group-hover:font-bold">{label}</H3>
+            <H3 className="group-hover:font-bold group-hover:font-primary font-secondary">
+                {label}
+            </H3>
             {showImage && (
                 <div
-                    className="absolute rounded-lg"
+                    className="absolute rounded-lg z-100"
                     style={{ left: imagePosition.x, top: imagePosition.y }}
                 >
                     <img
                         src={imageSrc}
                         alt=""
-                        className="z-100 w-auto h-auto max-w-xs max-h-xs rounded-lg"
+                        className="z-100 w-auto h-auto max-w-xs max-h-xs rounded-lg "
                     />
                 </div>
             )}

@@ -8,23 +8,39 @@ import MaskText from "../components/MaskText";
 const HowItWork = () => {
     const phrases = ["Simple process", "to create impactful", "result"];
     return (
-        <div className="container grid grid-cols-2 py-20 h-[700px]">
-            <div className="py-16 flex flex-col items-start">
+        <div className="container grid grid-cols-3 py-10 min-h-[700px] gap-12 bg-white rounded-xl">
+            <div className=" flex flex-col justify-start col-span-1">
                 <div className="text-brand text-xl font-medium leading-loose">
                     How it works
                 </div>
                 <MaskText phrases={phrases} textSize="5xl" />
             </div>
-            <div className=" flex flex-col ">
+            <div className=" flex flex-col col-span-2 ">
                 <AccordionItem
                     number="01"
                     title="Fill in the brief template"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar, quam at consequat congue, lorem urna congue nulla."
+                    description="Provide with essential details to understand your project."
                 />
-                <AccordionItem number="02" title="Understand & empathize" />
-                <AccordionItem number="03" title="Send Timelines & Invoices" />
-                <AccordionItem number="04" title="Update progress daily" />
-                <AccordionItem number="05" title="Project completed" />
+                <AccordionItem
+                    number="02"
+                    title="Understand & empathize"
+                    description="Research and ensure our solutions align perfectly with your audience's expectation."
+                />
+                <AccordionItem
+                    number="03"
+                    title="Send Timelines & Invoices"
+                    description="Provide a clear timeline ensuring clarity and accountability throughout the process"
+                />
+                <AccordionItem
+                    number="04"
+                    title="Update progress daily"
+                    description="Regular updates allow for collaboration and feedback, ensuring the project stays on track."
+                />
+                <AccordionItem
+                    number="05"
+                    title="Project completed"
+                    description="Upon completion, we deliver a polished, high-quality result that exceeds your expectations. Your satisfaction is our priority, and we're committed to delivering impactful outcomes for your project."
+                />
             </div>
         </div>
     );
@@ -44,7 +60,7 @@ const AccordionItem = ({ number, title, description }) => {
                 </div>
             </div>
             {isOpen && (
-                <div className="p-4 bg-white  text-secondary font-normal font-main text-xl">
+                <div className="p-4  text-secondary font-normal font-main text-xl">
                     {description}
                 </div>
             )}

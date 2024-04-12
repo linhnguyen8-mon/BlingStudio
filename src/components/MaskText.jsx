@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { H1, H2, H3 } from "../components/Heading";
+
 const MaskText = ({ phrases, textSize }) => {
     const { ref, inView } = useInView({
         triggerOnce: true,
@@ -15,16 +17,18 @@ const MaskText = ({ phrases, textSize }) => {
         <div ref={ref}>
             {phrases.map((phrase, index) => (
                 <div key={index} className="overflow-hidden">
-                    <motion.p
-                        className={`text-${textSize} font-bold leading-snug `}
-                        custom={index}
-                        variants={textAnimation}
-                        initial="initial"
-                        animate={inView ? "enter" : ""}
-                        style={{ overflow: "hidden" }}
-                    >
-                        {phrase}
-                    </motion.p>
+                    <H2>
+                        <motion.p
+                            className={`text-${textSize} font-primary font-bold leading-snug !important`}
+                            custom={index}
+                            variants={textAnimation}
+                            initial="initial"
+                            animate={inView ? "enter" : ""}
+                            style={{ overflow: "hidden" }}
+                        >
+                            {phrase}
+                        </motion.p>
+                    </H2>
                 </div>
             ))}
         </div>

@@ -72,3 +72,31 @@ body {
 .animate-moveUp {
     animation: moveUp 1s ease-out;
 }
+.smooth-hover {
+    transition: bottom 0.3s ease-in-out;
+}
+
+.smooth-hover:hover {
+    bottom: -80px;
+}
+.bg-gradient-to-b {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(132, 175, 185, 1)
+    );
+}
+.input-field {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+.move-hover {
+    transition: transform 0.3s ease;
+}
+
+.move-hover:hover {
+    transform: translateY(-10px); /* Adjust the value as needed */
+}
