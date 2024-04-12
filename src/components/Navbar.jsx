@@ -43,13 +43,13 @@ const NavBar = () => {
     const closeModal = () => setIsModalOpen(false);
     return (
         <nav
-            className={`mx-auto w-screen  p-6 lg:px-7.5 fixed z-50 bg-${
+            className={`mx-auto w-screen  px-6 py-3 lg:px-7.5 fixed z-50 bg-${
                 navbarBackground === "white"
                     ? "white backdrop-blur-md bg-opacity-70"
                     : "transparent"
             }`}
         >
-            <div className="flex items-center justify-between h-[48px] lg:px-2">
+            <div className="flex items-center justify-between  lg:px-2">
                 <Link
                     to="home"
                     activeClass="active"
@@ -63,8 +63,8 @@ const NavBar = () => {
                 </Link>
 
                 <div
-                    className={`hidden md:flex md:mx-auto items-center gap-20 font-main font-normal text-secondary`}
-                    style={{ width: `${navigation.length * 140}px` }} // Adjust the width as needed
+                    className={`hidden md:flex md:mx-auto items-center gap-20 sm:gap-12 font-main font-normal text-secondary`}
+                    style={{ width: `${navigation.length * 100}px` }} // Adjust the width as needed
                 >
                     {navigation.map((item) => (
                         <Link

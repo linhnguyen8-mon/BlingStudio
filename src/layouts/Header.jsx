@@ -17,7 +17,7 @@ const Header = () => {
     // Small Scroll down animation
 
     return (
-        <div className="  text-primary flex justify-center relative " id="home">
+        <div className="text-primary flex justify-center relative " id="home">
             <div className="flex flex-col items-center mt-80">
                 {/* Text */}
                 <div className="text-center relative">
@@ -26,7 +26,7 @@ const Header = () => {
                         <div className="absolute w-[140px] h-[54px] bg-brand rounded-full top-[50px] right-[140px] animate-moveUp "></div>
                     )}{" "}
                 </div>
-                <div className="w-[446px] pt-[8rem] text-center text-secondary text-xl font-normal font-main leading-loose">
+                <div className="w-[446px] pt-[3rem] text-center text-secondary text-xl font-normal font-main leading-loose">
                     Hi all, I'm Linh - a passionate designer making creative
                     solutions for visual
                 </div>
