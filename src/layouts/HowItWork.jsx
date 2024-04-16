@@ -8,7 +8,7 @@ import MaskText from "../components/MaskText";
 const HowItWork = () => {
     const phrases = ["Simple process", "to create impactful", "result"];
     return (
-        <div className="container grid grid-cols-3 py-10 min-h-[700px] gap-12 bg-white rounded-xl">
+        <div className="lg:container sm:m-4 sm:p-5 grid sm:grid-cols-1 lg:grid-cols-3 py-10 min-h-[700px] gap-12 bg-white rounded-xl">
             <div className=" flex flex-col justify-start col-span-1">
                 <div className="text-brand text-xl font-medium leading-loose">
                     How it works

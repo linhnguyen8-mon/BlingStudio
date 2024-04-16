@@ -2,8 +2,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer utilities {
-    .clip-shape {
-        clip-path: polygon(0 0, 200% 0, 300% 300%, 0 300%);
-    }
-}

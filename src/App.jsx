@@ -20,7 +20,7 @@ import logo from "./assets/logo.svg";
 import Arrow_1 from "./assets/Arrow_1.svg";
 const App = () => {
     return (
-        <div className=" w-screen bg-background 4xl:container  mx-auto">
+        <div className=" w-full bg-background 4xl:container overflow-hidden ">
             <Router>
                 <NavBar />
                 <Element name="header">
