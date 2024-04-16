@@ -1,18 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import { useTransform, useScroll, motion } from "framer-motion";
+import shadow from "../assets/shadow.svg";
 import StarBlack from "../assets/StarBlack.svg";
 import Lenis from "@studio-freight/lenis";
-import img_1 from "../assets/img/img_1.png";
-import img_2 from "../assets/img/img_2.png";
-import img_3 from "../assets/img/img_3.png";
-import img_4 from "../assets/img/img_4.png";
-import img_5 from "../assets/img/img_5.png";
-import img_6 from "../assets/img/img_6.png";
-import img_7 from "../assets/img/img_7.png";
-import img_8 from "../assets/img/img_8.png";
-import img_9 from "../assets/img/img_9.png";
-import img_10 from "../assets/img/img_10.png";
-import img_11 from "../assets/img/img_11.png";
+import img_1 from "../assets/Audio book.png";
+import img_2 from "../assets/EdTech.png";
+import img_3 from "../assets/kindergarden.png";
+import img_4 from "../assets/EdTech-2.png";
+import img_5 from "../assets/Summer camp.png";
+import img_6 from "../assets/Sudoku.png";
+import img_7 from "../assets/Travel.png";
+import img_8 from "../assets/Transportation.png";
+import img_9 from "../assets/Workout.png";
+import img_10 from "../assets/Workout-1.png";
+import img_11 from "../assets/website.png";
 import img_12 from "../assets/img/img_12.png";
 const images = [
     img_1,
@@ -57,9 +58,9 @@ const OurWork = () => {
 
     const columnYs = [
         useTransform(scrollYProgress, [0, 1], [0, -height * 1]),
-        useTransform(scrollYProgress, [0, 1], [0, height * 0.1]),
+        useTransform(scrollYProgress, [0, 1], [0, height * 0.5]),
         useTransform(scrollYProgress, [0, 1], [0, -height * 1.2]),
-        useTransform(scrollYProgress, [0, 1], [0, height * 0.1]),
+        useTransform(scrollYProgress, [0, 1], [0, height * 0.5]),
     ];
     const topPositions = {
         0: "-720%",
@@ -69,7 +70,7 @@ const OurWork = () => {
     };
     return (
         <div>
-            <div className="h-[78px] py-3 bg-white">
+            <div className=" py-3 bg-white">
                 <div className="inline-flex gap-16 text-black text-3xl font-bold font-main uppercase leading-[54px]">
                     {Array.from({ length: 6 }).map((_, i) => (
                         <>
@@ -80,7 +81,7 @@ const OurWork = () => {
                 </div>
             </div>
             <div
-                className="grid grid-cols-4 h-[1200px] relative gap-3 overflow-hidden"
+                className="grid sm:grid-cols-2 lg:grid-cols-4 sm:h-[3000px] lg:h-[1600px] bg-[#262626] relative gap-8 overflow-hidden"
                 ref={galleryRef}
             >
                 {Array.from({ length: 4 }).map((_, i) => (
@@ -92,6 +93,11 @@ const OurWork = () => {
                         />
                     </div>
                 ))}
+                <img
+                    className="z-100 absolute w-full bottom-0"
+                    src={shadow}
+                    alt=""
+                />
             </div>
         </div>
     );
