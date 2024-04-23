@@ -1,22 +1,31 @@
 import React, { useState } from "react";
 export const IconButton = ({ svg, name, className, onClick }) => {
     return (
-        <button
-            className={`inline-flex items-center justify-center h-12 px-6 rounded-full gap-2.5 font-main ${className} transition duration-300 ease-in-out hover:brightness-90`}
-            onClick={onClick}
-        >
-            <span className="text-white text-base font-bold">{name}</span>
-            <img src={svg} alt="Icon" className="w-6 h-6" />
-        </button>
+        <div className="group">
+            <button
+                className={` inline-flex items-center justify-center h-12 px-6 rounded-full gap-2.5 font-main ${className}  border-white border-2 group-hover:bg-white group-hover:border-white`}
+                onClick={onClick}
+            >
+                <span className="text-white text-base font-bold group-hover:text-brand  whitespace-nowrap">
+                    {name}
+                </span>
+                <img src={svg} alt="Icon" className="w-4 h-4 icon " />
+            </button>
+        </div>
     );
 };
-export const Button = ({ name, className, onClick }) => {
+
+export const Button = ({ name, className, onClick, classNameChild }) => {
     return (
         <button
-            className={`bg-brand inline-flex items-center justify-center h-12 px-6 rounded-full gap-2.5 font-main ${className} transition duration-300 ease-in-out hover:brightness-90`}
+            className={`text-brand border-brand border-2 inline-flex items-center justify-center h-12 px-6 rounded-full gap-2.5 font-main ${className} `}
             onClick={onClick}
         >
-            <span className="text-white text-base font-bold">{name}</span>
+            <span
+                className={`text-brand text-base font-semibold ${classNameChild}`}
+            >
+                {name}
+            </span>
         </button>
     );
 };
@@ -35,14 +44,15 @@ export const StyledButton = ({ name, className, onClick }) => {
 };
 export const OutlineButton = ({ name, className, classNameChild, color }) => {
     return (
-        <button
-            className={`px-5 pt-[11px] pb-2.5 rounded-full border inline-block border-${color}  ${className} group hover:bg-white`}
+        <a
+            href="https://www.framer.com/?via=michael19"
+            className={`px-5 pt-[11px] pb-2.5 rounded-full border inline-block border-${color} ${className} group hover:bg-brand hover:bg-opacity-5`}
         >
             <span
-                className={`uppercase  text-sm font-medium ${classNameChild} text-${color} group-hover:text-primary`}
+                className={`uppercase  text-sm font-medium ${classNameChild} text-${color} group-hover:text-brand group-hover:font-bold`}
             >
                 {name}
             </span>
-        </button>
+        </a>
     );
 };

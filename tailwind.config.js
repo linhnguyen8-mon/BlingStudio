@@ -3,8 +3,9 @@ export default {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
     theme: {
         screens: {
-            sm: "360px",
-            md: "768px",
+            smm: "0px",
+            sm: "330px",
+            md: "500px",
             lg: "1024px",
             xl: "1280px",
             "2xl": "1536px",
@@ -16,10 +17,15 @@ export default {
                 main: ["Inter"],
             },
             colors: {
-                brand: "#4C58B5",
+                brand: "#156fe5",
                 background: "#F5F6FF",
                 primary: "#18191B",
                 secondary: "#707A95",
+                gradient: {
+                    start: "#1e2f51",
+                    middle: "#4C58B5",
+                    end: "#a2bfe9",
+                },
             },
         },
         container: {

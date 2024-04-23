@@ -70,9 +70,9 @@ const OurWork = () => {
     };
     return (
         <div>
-            <div className=" py-3 bg-white">
+            <div className=" py-3 bg-white relative">
                 <div className="inline-flex gap-16 text-black text-3xl font-bold font-main uppercase leading-[54px]">
-                    {Array.from({ length: 6 }).map((_, i) => (
+                    {Array.from({ length: 8 }).map((_, i) => (
                         <>
                             <div className="w-[180px]">Our work</div>
                             <img src={StarBlack} alt="" />
@@ -81,7 +81,7 @@ const OurWork = () => {
                 </div>
             </div>
             <div
-                className="grid sm:grid-cols-2 lg:grid-cols-4 sm:h-[3000px] lg:h-[1600px] bg-[#262626] relative gap-8 overflow-hidden"
+                className="grid sm:grid-cols-2 lg:grid-cols-4 sm:h-[2200px] lg:h-[1600px] bg-[#262626] relative gap-8 overflow-hidden"
                 ref={galleryRef}
             >
                 {Array.from({ length: 4 }).map((_, i) => (

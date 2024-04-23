@@ -1,4 +1,5 @@
 import "./App.css";
+import "./Player.css";
 import Header from "./layouts/Header";
 import Intro from "./layouts/Intro";
 import Service from "./layouts/Service";
@@ -16,16 +17,19 @@ import Modal from "./components/Modal";
 import { useState, useEffect } from "react";
 import { navigation } from "./constant/index";
 import { IconButton } from "./components/Button";
-import logo from "./assets/logo.svg";
-import Arrow_1 from "./assets/Arrow_1.svg";
+import logo from "./assets/full_logo.svg";
+import Arrow_1 from "./assets/arrow_white.svg";
+
 const App = () => {
     return (
-        <div className=" w-full bg-background 4xl:container overflow-hidden ">
+        <div className=" w-screen bg-background 4xl:container overflow-hidden relative  cursor-default">
             <Router>
                 <NavBar />
+
                 <Element name="header">
                     <Header />
                 </Element>
+
                 <Element name="whyus">
                     <Intro />
                 </Element>
@@ -46,15 +50,17 @@ const App = () => {
     );
 };
 const NavBar = () => {
+    // State to manage the background color of the navbar and the active section
     const [navbarBackground, setNavbarBackground] = useState("transparent");
-    const [activeSection, setActiveSection] = useState(""); // State to track active section
+    const [activeSection, setActiveSection] = useState("");
 
+    // Effect to change navbar background based on scroll position
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY >= 30) {
-                setNavbarBackground("white"); // Change to your desired background color
+            if (window.scrollY >= 1000) {
+                setNavbarBackground("white");
             } else {
-                setNavbarBackground("transparent"); // Change to your desired background color
+                setNavbarBackground("transparent");
             }
         };
         window.addEventListener("scroll", handleScroll);
@@ -63,76 +69,94 @@ const NavBar = () => {
         };
     }, []);
 
+    // Function to scroll to top when logo is clicked
     const scrollToTop = () => {
         scroll.scrollToTop();
     };
+
+    // Function to set active section when scrolling
     const handleSetActive = (to) => {
-        setActiveSection(to); // Update activeSection state with the section name
+        setActiveSection(to);
     };
+
+    // State and functions for modal
     const [isModalOpen, setIsModalOpen] = useState(false);
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
+
     return (
-        <>
+        <div className=" mt-2 fixed z-50 w-screen  ">
             <nav
-                className={`mx-auto w-screen  px-6 py-3 lg:px-7.5 fixed z-50 bg-${
+                className={`min-w-[1536px] container p-3 rounded-full flex justify-between items-center bg-${
                     navbarBackground === "white"
-                        ? "white backdrop-blur-md bg-opacity-70"
+                        ? "brand backdrop-blur-md bg-opacity-40"
                         : "transparent"
                 }`}
             >
-                <div className="flex items-center justify-between  lg:px-2">
-                    <Link
-                        to="home"
-                        activeClass="active"
-                        smooth={true}
-                        offset={50}
-                        duration={1500}
-                        onSetActive={scrollToTop}
-                        className="cursor-pointer"
-                    >
-                        <img src={logo} className="block" alt="Logo" />
-                    </Link>
-
-                    <div
-                        className={`hidden md:flex md:mx-auto items-center gap-20 sm:gap-12 font-main font-normal text-secondary`}
-                        style={{ width: `${navigation.length * 100}px` }} // Adjust the width as needed
-                    >
-                        {navigation.map((item) => (
-                            <Link
-                                activeClass="active"
-                                key={item.id}
-                                to={item.url}
-                                spy={true}
-                                smooth={true}
-                                offset={-100}
-                                duration={500}
-                                className={` cursor-pointer hover:text-brand hover:font-normal
-                ${
-                    activeSection === item.url
-                        ? "active font-bold text-brand border-b-4 border-brand"
-                        : ""
-                } 
-                ${item.onlyMobile ? "lg:hidden" : ""}`}
-                                onSetActive={handleSetActive}
-                            >
-                                {item.title}
-                            </Link>
-                        ))}
-                    </div>
-                    {/* Replace IconButton with your actual IconButton component */}
-                    <IconButton
-                        name="Contact me"
-                        className="bg-brand"
-                        svg={Arrow_1}
-                        onClick={openModal}
+                {/* Logo section */}
+                <Link
+                    to="home"
+                    activeClass="active"
+                    smooth={true}
+                    offset={50}
+                    duration={1500}
+                    onSetActive={scrollToTop}
+                    className="cursor-pointer"
+                >
+                    <img
+                        src={logo}
+                        className="smm:block w-24 max-w-xs "
+                        alt="Logo"
                     />
+                </Link>
+
+                {/* Items section */}
+                <div
+                    className={`md:block flex items-center h-12 sm:gap-6 font-main  text-white ${
+                        !isModalOpen ? "smm:hidden" : ""
+                    }`}
+                >
+                    {/* Render navigation items */}
+                    {navigation.map((item) => (
+                        <Link
+                            activeClass="active"
+                            key={item.id}
+                            to={item.url}
+                            spy={true}
+                            smooth={true}
+                            offset={-100}
+                            duration={500}
+                            className={`cursor-pointer hover:text-white hover:font-semibold p-3 px-6 border border-transparent hover:border-white rounded-full text-nowrap relative
+                            ${
+                                activeSection === item.url
+                                    ? "active font-bold text-white"
+                                    : ""
+                            } 
+                        `}
+                            onSetActive={handleSetActive}
+                        >
+                            {item.title}
+                            {/* Indicator for active section */}
+                            {activeSection === item.url && (
+                                <div className="w-[8px] h-[8px] rounded-full bg-white absolute top-[38px] left-1/2 transform -translate-x-1/2"></div>
+                            )}
+                        </Link>
+                    ))}
                 </div>
+
+                {/* Button section */}
+                <IconButton
+                    name="Contact me"
+                    svg={Arrow_1}
+                    onClick={openModal}
+                />
             </nav>
-            <div className="z-50 fixed ">
+
+            {/* Modal */}
+            <div className="z-50 fixed">
                 {isModalOpen && <Modal onClose={closeModal} />}
             </div>
-        </>
+        </div>
     );
 };
 
