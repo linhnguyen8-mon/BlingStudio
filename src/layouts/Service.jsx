@@ -1,11 +1,10 @@
-import { H1, H2, H3 } from "../components/Heading";
+import { useState } from "react";
+import { H3 } from "../components/Heading";
 import arrow from "../assets/arrow.svg";
 import img_header_2 from "../assets/img_header_2.png";
 import branding from "../assets/brand.svg";
 import website1 from "../assets/Website1.png";
 import MaskText from "../components/MaskText";
-import React, { useState } from "react";
-
 const Service = () => {
     const servicePhrases = [
         "Helping startups create",
@@ -13,18 +12,19 @@ const Service = () => {
     ];
 
     return (
-        <div className="w-full flex items-center justify-center py-[80px]">
-            <div className="lg:container  lg:w-8/12  py-16 pb-4 flex-col gap-4 inline-flex font-main">
-                <div className="text-brand font-bold leading-loose">
-                    Our service
+        <div className="w-full bg-white  relative">
+            <div className="smm:px-3 w-full flex items-center justify-center py-[80px]  z-50">
+                <div className="lg:container  lg:w-8/12  py-16 pb-4 flex-col gap-4 inline-flex font-main">
+                    <div className="text-brand font-bold leading-loose">
+                        Our service
+                    </div>
+                    <MaskText phrases={servicePhrases} textSize="5xl" />
+                    <ServiceList />
                 </div>
-                <MaskText phrases={servicePhrases} textSize="5xl" />
-                <ServiceList />
             </div>
         </div>
     );
 };
-
 const ServiceList = () => (
     <div className="pt-8 flex flex-col gap-4">
         <ServiceItem
@@ -44,7 +44,6 @@ const ServiceList = () => (
         />
     </div>
 );
-
 const ServiceItem = ({ label, href, imageSrc }) => {
     const [showImage, setShowImage] = useState(false);
 
@@ -60,15 +59,19 @@ const ServiceItem = ({ label, href, imageSrc }) => {
             <H3 className="group-hover:font-bold group-hover:font-primary font-secondary">
                 {label}
             </H3>
-            {showImage && (
-                <div className="absolute rounded-lg z-100 right-40">
+            <div
+                className={`absolute rounded-lg z-100 right-40 transition-opacity transition-transform duration-500 ease-in-out ${
+                    showImage ? "opacity-100 scale-100" : "opacity-0 scale-0"
+                }`}
+            >
+                {showImage && (
                     <img
                         src={imageSrc}
                         alt=""
-                        className="z-100 w-auto h-auto sm:w-[160px] lg:max-w-xs lg:max-h-xs rounded-lg "
+                        className="z-100 w-auto h-auto sm:w-[2000px] lg:max-w-xs lg:max-h-xs rounded-lg"
                     />
-                </div>
-            )}
+                )}
+            </div>
             <div className="w-10 h-10 bg-transparent rounded-full flex items-center justify-center group-hover:bg-brand">
                 <img
                     src={arrow}
@@ -79,4 +82,5 @@ const ServiceItem = ({ label, href, imageSrc }) => {
         </a>
     );
 };
+
 export default Service;

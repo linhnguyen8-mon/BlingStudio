@@ -19,10 +19,13 @@ const Modal = ({ onClose }) => {
 
         document.addEventListener("keydown", handleKeyDown);
         document.addEventListener("click", handleOverlayClick);
-
+        // Disable scrolling on the body when the modal is open
+        document.body.style.overflow = "hidden";
         return () => {
             document.removeEventListener("keydown", handleKeyDown);
             document.removeEventListener("click", handleOverlayClick);
+            // Re-enable scrolling on the body when the modal is closed
+            document.body.style.overflow = "auto";
         };
     }, [onClose]);
 
@@ -33,25 +36,33 @@ const Modal = ({ onClose }) => {
 
     return (
         <div className="relative">
+            {/* Overlay */}
             <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 modal-overlay"></div>
-            <div className="fixed h-3/5 w-3/5 z-50 bg-white rounded-lg top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden">
+
+            {/* Modal */}
+            <div className=" m-a fixed smm:w-11/12 smm:h-11/12  smm:mt-4 smm:mb-4 lg:h-5/6 lg:w-4/5 z-50 bg-white rounded-lg top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  overflow-y-scroll">
+                {/* Close button */}
                 <a
                     href=""
                     onClick={handleClose}
-                    className="absolute top-4 right-4"
+                    className="absolute  top-4 right-4 z-50"
                 >
-                    <img src={Close} alt="" />
+                    <div className="w-12 h-12 rounded-full bg-white bg-opacity-50 flex items-center justify-center">
+                        <img src={Close} alt="" />
+                    </div>
                 </a>
-                <div className="grid grid-cols-3">
-                    <div className="col-span-1 flex  bg-gradient-to-b from-brand to-white h-screen relative ">
-                        {/* <H3>Contact me</H3> */}
+
+                {/* Modal grid */}
+                <div className="grid smm:grid-cols-1 lg:grid-cols-3 ">
+                    <div className="smm:h-[140px] lg:h-auto lg:col-span-1 flex bg-gradient-to-b from-brand to-white relative ">
+                        {/* Image */}
                         <img
                             className="w-36 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                             src={brand}
                             alt=""
                         />
                     </div>
-                    <div className="col-span-2">
+                    <div className="lg:col-span-2">
                         <ContactForm />
                     </div>
                 </div>
