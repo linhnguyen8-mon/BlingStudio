@@ -19,7 +19,7 @@ const MaskText = ({ phrases, className }) => {
                 <div key={index} className="overflow-hidden">
                     <H2>
                         <motion.p
-                            className={`${className} font-white font-bold leading-none mb-6`}
+                            className={`${className} font-white font-bold leading-loose`}
                             custom={index}
                             variants={textAnimation}
                             initial="initial"

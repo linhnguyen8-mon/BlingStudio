@@ -7,7 +7,6 @@ import triangle from "../assets/triangle.svg";
 import star01 from "../assets/star-01.svg";
 import star04 from "../assets/star-04.svg";
 import Iphone from "../assets/Iphone.png";
-import circle from "../assets/circle.svg";
 import MaskText from "../components/MaskText";
 
 const Intro = () => {
@@ -73,21 +72,26 @@ const Intro = () => {
             className=" w-full  bg-brand flex flex-col  py-[120PX]  gap-12 relative "
             id="whyus"
         >
-            <div className="max-w-screen-2xl smm:px-3 md:px-6 container bg-white text-primary rounded-2xl p-12 ">
+            <img
+                className="absolute top-[0px] right-[0px] w-[400px] opacity-[0.2]"
+                src={pattern}
+                alt=""
+            />
+            <div className="max-w-screen-2xl smm:px-3 md:px-6 container bg-white text-primary rounded-2xl p-12 z-10 ">
                 <div className="text-center relative">
                     <MaskText
                         phrases={phrases}
-                        className="animate-character smm:hidden lg:block sm:text-[56px] lg:text-6XL "
+                        className="animate-character smm:hidden xl:block sm:text-[56px] lg:text-6XL "
                     />
                     {showDiv && (
-                        <div className="absolute smm:hidden lg:block bg-brand rounded-full lg:w-[90px] lg:h-[36px] lg:top-[15px] lg:right-[324px] xl:w-[90px] xl:h-[40px] xl:top-[10px] xl:right-[452px] 2xl:right-[577px] animate-moveUp "></div>
+                        <div className="absolute smm:hidden xl:block bg-brand rounded-full h-[40px] w-[90px] ] xl:right-[580px] xl:top-[37px] animate-moveUp "></div>
                     )}
-                    <H2 className="smm:block lg:hidden">
+                    <H2 className="smm:block xl:hidden mb-8">
                         Make the world full of bling
                     </H2>
-                    <div className=" smm:hidden lg:block  lg:scale-[0.5] xl:scale-[0.6] 2xl:scale-1">
+                    <div className=" smm:hidden xl:block xl:scale-50 ">
                         <img
-                            className="absolute lg:right-[10rem] lg:top-[-355px] xl:right-[332px] xl:top-[-321px] 2xl:right-[460px] animate-picture-moveUp"
+                            className="absolute xl:right-[420px] xl:top-[-429px] animate-picture-moveUp"
                             src={Iphone}
                             width={160}
                             alt=""
@@ -98,11 +102,7 @@ const Intro = () => {
                         />
                     </div>
                 </div>
-                <img
-                    className="absolute top-0 right-0 w-[400px] opacity-[0.02]"
-                    src={pattern}
-                    alt=""
-                />
+
                 <div className=" sm:flex-col md:flex-row flex justify-between lg:container gap-2 ">
                     <Card
                         src={triangle}
@@ -127,10 +127,12 @@ const Intro = () => {
 
             <div className="container p-0 ">
                 <div className="h-[80px] -rotate-2 bg-brand absolute bottom-[140px] left-0 z-10 overflow-hidden">
-                    <div className="inline-flex mt-6 gap-16 text-white text-3xl font-bold font-main uppercase animate-slideLeftRight">
+                    <div className="inline-flex my-6 gap-16 text-white md:text-xl lg:text-3xl font-bold font-main uppercase animate-slideLeftRight">
                         {services.map((service, index) => (
                             <div key={index} className="flex justify-evenly">
-                                <div className="w-[200px]">{service}</div>
+                                <div className="smm:w-[160px] md:w-[200px]">
+                                    {service}
+                                </div>
                                 <img src={StarWhite} alt="" />
                             </div>
                         ))}
@@ -144,11 +146,11 @@ const Intro = () => {
 const Card = ({ name, content, src, isLast }) => {
     return (
         <div
-            className={`move-hover group${
+            className={`flex grow move-hover group${
                 isLast ? "" : " border-r border-gray-100"
             }`}
         >
-            <div className=" bg-white  shadow-blue-200 rounded-xl p-6 relativen  h-full lg:h-[380px]">
+            <div className=" bg-white  shadow-blue-200 rounded-xl p-6   h-full lg:h-[380px]">
                 <img
                     src={src}
                     alt=""

@@ -1,9 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ContactForm from "./ContactForm";
-import { H1, H2, H3 } from "../components/Heading";
 import Close from "../assets/Close.svg";
 import brand from "../assets/brand1.svg";
+import sign from "../assets/sign.png";
+
 const Modal = ({ onClose }) => {
+    const [showSuccessCard, setShowSuccessCard] = useState(false);
+
+    const handleSuccess = () => {
+        setShowSuccessCard(true);
+    };
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (e.key === "Escape") {
@@ -35,37 +41,54 @@ const Modal = ({ onClose }) => {
     };
 
     return (
-        <div className="relative">
-            {/* Overlay */}
-            <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 modal-overlay"></div>
-
-            {/* Modal */}
-            <div className=" m-a fixed smm:w-11/12 smm:h-11/12  smm:mt-4 smm:mb-4 lg:h-5/6 lg:w-4/5 z-50 bg-white rounded-lg top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  overflow-y-scroll">
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center modal-overlay bg-black bg-opacity-50 z-[999]">
+            <div className="relative bg-white rounded-lg smm:w-[90%] smm:h-[90%] lg:w-[1200px] lg:h-[800px] overflow-y-auto ">
                 {/* Close button */}
-                <a
-                    href=""
+                <button
                     onClick={handleClose}
-                    className="absolute  top-4 right-4 z-50"
+                    className="absolute top-4 right-4 z-50 focus:outline-none"
                 >
-                    <div className="w-12 h-12 rounded-full bg-white bg-opacity-50 flex items-center justify-center">
-                        <img src={Close} alt="" />
-                    </div>
-                </a>
+                    <img src={Close} alt="Close" className="w-6 h-6" />
+                </button>
 
                 {/* Modal grid */}
-                <div className="grid smm:grid-cols-1 lg:grid-cols-3 ">
-                    <div className="smm:h-[140px] lg:h-auto lg:col-span-1 flex bg-gradient-to-b from-brand to-white relative ">
+                {showSuccessCard ? (
+                    <div className="font-main">
+                        <p className="text-main text-4xl font-bold mt-24 mx-8">
+                            Thanks for submitting!
+                        </p>
+                        <div className="text-secondary  ml-8 bg-[#fff] p-8 rounded-xl text-xl mx-8 mt-8">
+                            <span>
+                                I will provide you with a comprehensive response
+                                shortly. If you have any urgent concerns or
+                                additional information, please do not hesitate
+                                to reach out.
+                            </span>
+                            <div className="mt-12">
+                                Thank you once again for your cooperation.
+                            </div>
+                            <img src={sign} className="h-24" alt="" />
+                            <div className="block italic mt-4 text-main font-semibold">
+                                Bling studio
+                            </div>
+                        </div>
+                    </div>
+                ) : (
+                    <div className="grid smm:grid-cols-1 lg:grid-cols-3">
                         {/* Image */}
-                        <img
-                            className="w-36 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                            src={brand}
-                            alt=""
-                        />
+                        <div className="smm:hidden lg:block lg:h-full lg:col-span-1 flex bg-gradient-to-b from-brand to-white relative">
+                            <img
+                                className="w-36 absolute top-[360px] left-[126px]"
+                                src={brand}
+                                alt=""
+                            />
+                        </div>
+
+                        <div className="lg:col-span-2">
+                            <ContactForm onSuccess={handleSuccess} />
+                        </div>
                     </div>
-                    <div className="lg:col-span-2">
-                        <ContactForm />
-                    </div>
-                </div>
+                )}
             </div>
         </div>
     );

@@ -14,7 +14,7 @@ const Service = () => {
     return (
         <div className="w-full bg-white  relative">
             <div className="smm:px-3 w-full flex items-center justify-center py-[80px]  z-50">
-                <div className="lg:container  lg:w-8/12  py-16 pb-4 flex-col gap-4 inline-flex font-main">
+                <div className="lg:container  lg:w-8/12  py-16 pb-4 flex-col gap-0 inline-flex font-main">
                     <div className="text-brand font-bold leading-loose">
                         Our service
                     </div>
@@ -28,11 +28,6 @@ const Service = () => {
 const ServiceList = () => (
     <div className="pt-8 flex flex-col gap-4">
         <ServiceItem
-            label="Branding"
-            href="https://www.figma.com/file/QW8KrgWe4br09aFRfDBqwE/Bling?type=design&node-id=1%3A3&mode=design&t=OtuBKKg5hTm6TpBX-1"
-            imageSrc={branding}
-        />
-        <ServiceItem
             imageSrc={img_header_2}
             label="Mobile app"
             href="https://www.figma.com/file/QW8KrgWe4br09aFRfDBqwE/Bling?type=design&node-id=0%3A1&mode=design&t=OtuBKKg5hTm6TpBX-1"
@@ -41,6 +36,11 @@ const ServiceList = () => (
             imageSrc={website1}
             label="Website"
             href="https://www.figma.com/file/QW8KrgWe4br09aFRfDBqwE/Bling?type=design&node-id=1%3A2&mode=design&t=OtuBKKg5hTm6TpBX-1"
+        />
+        <ServiceItem
+            label="Branding"
+            href="https://www.figma.com/file/QW8KrgWe4br09aFRfDBqwE/Bling?type=design&node-id=1%3A3&mode=design&t=OtuBKKg5hTm6TpBX-1"
+            imageSrc={branding}
         />
     </div>
 );
@@ -52,7 +52,7 @@ const ServiceItem = ({ label, href, imageSrc }) => {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative w-full flex items-center justify-between p-6 group rounded-xl bg-[#f0f1fe] hover:bg-white hover:shadow-xl hover:shadow-[#c8cade55] hover:z-50"
+            className="relative w-full flex items-center justify-between p-6 group rounded-xl bg-[#f0f1fe] hover:bg-[#fff] hover:shadow-xl hover:shadow-[#c8cade55] hover:z-50"
             onMouseEnter={() => setShowImage(true)}
             onMouseLeave={() => setShowImage(false)}
         >
