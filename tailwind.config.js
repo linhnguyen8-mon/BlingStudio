@@ -4,7 +4,7 @@ export default {
     theme: {
         screens: {
             smm: "0px",
-            sm: "330px",
+            sm: "300px",
             md: "500px",
             lg: "1024px",
             xl: "1280px",
@@ -17,6 +17,7 @@ export default {
                 main: ["Inter"],
             },
             colors: {
+                white: "#F5F5FC",
                 brand: "#156fe5",
                 background: "#F5F6FF",
                 primary: "#18191B",

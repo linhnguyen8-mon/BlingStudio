@@ -2,18 +2,20 @@ import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { Button } from "./Button";
 
-const ContactForm = () => {
+const ContactForm = ({ onSuccess }) => {
     const [state, handleSubmit] = useForm("mnqeoble");
-
-    if (state.succeeded) {
-        return <p>Thanks for joining!</p>;
-    }
+    const handleFormSubmit = async (e) => {
+        await handleSubmit(e);
+        if (state.succeeded) {
+            onSuccess();
+        }
+    };
 
     return (
-        <div className="p-8">
+        <div className="p-8 h-full relative">
             <form
-                onSubmit={handleSubmit}
-                className="flex flex-col relative gap-8  "
+                onSubmit={handleFormSubmit}
+                className="flex flex-col relative gap-8 "
             >
                 {/* Full name, email */}
                 <div className="flex smm:flex-col lg:flex-row md:flex-row gap-8">
@@ -22,7 +24,7 @@ const ContactForm = () => {
                             Full name
                         </label>
                         <input
-                            className="mt-2 w-full bg-gray-100 p-4 rounded-lg border-gray-100 border-2 hover:border-brand hover:border-opacity-60"
+                            className="mt-2 w-full bg-[#fff] p-4 rounded-lg border-gray-100 border-2 hover:border-brand hover:border-opacity-60"
                             id="name"
                             type="name"
                             name="name"
@@ -40,7 +42,7 @@ const ContactForm = () => {
                             Email
                         </label>
                         <input
-                            className="mt-2 w-full bg-gray-100 p-4 rounded-lg border-gray-100 border-2 hover:border-brand hover:border-opacity-60"
+                            className="mt-2 w-full bg-[#fff] p-4 rounded-lg border-gray-100 border-2 hover:border-brand hover:border-opacity-60"
                             id="email"
                             type="email"
                             name="email"
@@ -62,7 +64,7 @@ const ContactForm = () => {
                         you're hoping to work with us on.
                     </label>
                     <textarea
-                        className="bg-gray-100 p-4 rounded-lg border-gray-100 border-2 hover:border-brand hover:border-opacity-60 focus-within:border-brand"
+                        className="bg-[#fff] p-4 rounded-lg border-gray-100 border-2 hover:border-brand hover:border-opacity-60 focus-within:border-brand"
                         id="message"
                         name="message"
                         placeholder="I want to create a {___mobile app___}. I'm inspired by apps like {___app name___}. My goal is to make an app that's even better. I expect the project to end with a really good app with {___features___}."
@@ -76,47 +78,58 @@ const ContactForm = () => {
                 </div>
 
                 {/* Guidance */}
-                <div className="font-main text-secondary">
+                <div className="font-main text-secondary flex-grow">
                     <span className="text-primary font-bold "> Guidance:</span>
 
-                    <ul className="mt-4 overflow-x-scroll h-[240px] flex flex-col-5 gap-6 bg-gray-100 p-4 rounded-lg border-gray-100 border-2">
-                        <li className="flex flex-col gap-4 ">
-                            <span className="py-2 px-4 border-brand border text-brand rounded-full font-semibold">
+                    <ul className="mt-4  overflow-x-scroll flex flex-col-5 gap-6 bg-[#fff] p-4 rounded-lg border-gray-100 border-2">
+                        <li className="flex flex-col gap-4">
+                            <span className="text-secondary rounded-full font-semibold uppercase">
                                 Introduction
                             </span>
-                            Briefly introduce yourself or your business.
+                            <span className="text-sm">
+                                Briefly introduce yourself or your business.
+                            </span>
                         </li>
                         <li className="flex flex-col gap-4 ">
-                            <span className="py-2 px-4 border-brand border text-brand rounded-full font-semibold">
+                            <span className="text-secondary rounded-full font-semibold uppercase">
                                 Concept
                             </span>
-                            Describe your mobile app idea. Mention any apps that
-                            inspire you.
+                            <span className="text-sm">
+                                Describe your mobile app idea. Mention any apps
+                                that inspire you.
+                            </span>
                         </li>
                         <li className="flex flex-col gap-4 ">
-                            <span className="py-2 px-4 border-brand border text-brand rounded-full font-semibold">
+                            <span className="text-secondary rounded-full font-semibold uppercase">
                                 Goals
                             </span>
-                            State what you want to achieve with the app.
+                            <span className="text-sm">
+                                State what you want to achieve with the app.
+                            </span>
                         </li>
                         <li className="flex flex-col gap-4 ">
-                            <span className="py-2 px-4 border-brand border text-brand rounded-full font-semibold">
+                            <span className="text-secondary rounded-full font-semibold uppercase">
                                 Features
                             </span>
-                            List the key desired features you want in the app.
+                            <span className="text-sm">
+                                List the key desired features you want in the
+                                app.
+                            </span>
                         </li>
                         <li className="flex flex-col gap-4 ">
-                            <span className="py-2 px-4 border-brand border text-brand rounded-full font-semibold">
+                            <span className="text-secondary rounded-full font-semibold uppercase">
                                 Expectations
                             </span>
-                            Share any specific project goals or timelines.
-                            Mention any budget constraints, if applicable.
+                            <span className="text-sm">
+                                Share any specific project goals or timelines.
+                                Mention any budget constraints, if applicable.
+                            </span>
                         </li>
                     </ul>
                 </div>
 
                 {/* CTA */}
-                <div className="h-full sticky bg-white mt-8 z-50 bottom-0  p-4 ">
+                <div className="absolute bottom-[-120px] z-50 ">
                     <Button
                         type="submit"
                         disabled={state.submitting}

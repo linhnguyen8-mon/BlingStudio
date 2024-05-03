@@ -85,12 +85,12 @@ const NavBar = () => {
     const closeModal = () => setIsModalOpen(false);
 
     return (
-        <div className=" mt-2 fixed z-50 w-screen  ">
+        <div className=" m-2 fixed z-50 w-screen ">
             <nav
-                className={`min-w-[1536px] container p-3 rounded-full flex justify-between items-center bg-${
+                className={`max-w-[1536px] container p-3 rounded-full flex justify-between items-center bg-${
                     navbarBackground === "white"
-                        ? "brand backdrop-blur-md bg-opacity-40"
-                        : "transparent"
+                        ? "brand backdrop-blur-md bg-opacity-40 flex justify-between items-center "
+                        : "transparent flex justify-between items-center "
                 }`}
             >
                 {/* Logo section */}
@@ -111,40 +111,42 @@ const NavBar = () => {
                 </Link>
 
                 {/* Items section */}
-                <div
-                    className={`md:block flex items-center h-12 sm:gap-6 font-main  text-white ${
-                        !isModalOpen ? "smm:hidden" : ""
-                    }`}
-                >
-                    {/* Render navigation items */}
-                    {navigation.map((item) => (
-                        <Link
-                            activeClass="active"
-                            key={item.id}
-                            to={item.url}
-                            spy={true}
-                            smooth={true}
-                            offset={-100}
-                            duration={500}
-                            className={`cursor-pointer hover:text-white hover:font-semibold p-3 px-6 border border-transparent hover:border-white rounded-full text-nowrap relative
+                <div className="parent-container">
+                    <div
+                        className={`md:block flex items-center justify-between h-12 sm:gap-6 font-main text-white ${
+                            !isModalOpen ? "smm:hidden" : ""
+                        }`}
+                    >
+                        {/* Render navigation items */}
+                        {navigation.map((item) => (
+                            <Link
+                                activeClass="active"
+                                key={item.id}
+                                to={item.url}
+                                spy={true}
+                                smooth={true}
+                                offset={-100}
+                                duration={500}
+                                className={` m-3 cursor-pointer hover:text-white hover:font-semibold p-3 px-4 border border-transparent hover:border-white rounded-full text-nowrap relative
                             ${
                                 activeSection === item.url
                                     ? "active font-bold text-white"
                                     : ""
                             } 
                         `}
-                            onSetActive={handleSetActive}
-                        >
-                            {item.title}
-                            {/* Indicator for active section */}
-                            {activeSection === item.url && (
-                                <div className="w-[8px] h-[8px] rounded-full bg-white absolute top-[38px] left-1/2 transform -translate-x-1/2"></div>
-                            )}
-                        </Link>
-                    ))}
-                </div>
+                                onSetActive={handleSetActive}
+                            >
+                                {item.title}
+                                {/* Indicator for active section */}
+                                {activeSection === item.url && (
+                                    <div className="w-[8px] h-[8px] rounded-full bg-white absolute top-[38px] left-1/2 transform -translate-x-1/2"></div>
+                                )}
+                            </Link>
+                        ))}
+                    </div>
 
-                {/* Button section */}
+                    {/* Button section */}
+                </div>
                 <IconButton
                     name="Contact me"
                     svg={Arrow_1}
@@ -153,7 +155,7 @@ const NavBar = () => {
             </nav>
 
             {/* Modal */}
-            <div className="z-50 fixed">
+            <div className="z-50 ">
                 {isModalOpen && <Modal onClose={closeModal} />}
             </div>
         </div>
