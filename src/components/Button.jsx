@@ -1,58 +1,68 @@
-import React, { useState } from "react";
-export const IconButton = ({ svg, name, className, onClick }) => {
+import React from "react";
+
+const BaseButton = ({ children, className, onClick, href }) => {
+    const Component = href ? "a" : "button";
+    const props = href ? { href } : { onClick };
+    return (
+        <Component
+            className={`inline-flex items-center justify-center h-16 px-8 rounded-full font-main font-semibold  ${className}
+            hover:shadow-xl   hover:shadow-orange-100 hover:px-10
+            `}
+            target="_blank"
+            {...props}
+        >
+            {children}
+        </Component>
+    );
+};
+
+export const IconButton = ({ svg, name, onClick }) => {
     return (
         <div className="group">
-            <button
-                className={` inline-flex items-center justify-center h-12 px-6 rounded-full gap-2.5 font-main ${className}  border-white border-2 group-hover:bg-white group-hover:border-white`}
+            <BaseButton
+                className={` border-primary border-2  `}
                 onClick={onClick}
             >
-                <span className="text-white text-base font-bold group-hover:text-brand  whitespace-nowrap">
+                <span className="text-primary text-base font-bold group-hover:text-brand  whitespace-nowrap">
                     {name}
                 </span>
                 <img src={svg} alt="Icon" className="w-4 h-4 icon " />
-            </button>
+            </BaseButton>
         </div>
     );
 };
 
-export const Button = ({ name, className, onClick, classNameChild }) => {
+export const FilledButton = ({ name, className, onClick, href }) => {
     return (
-        <button
-            className={`text-brand border-brand border-2 inline-flex items-center justify-center h-12 px-6 rounded-full gap-2.5 font-main ${className} `}
+        <BaseButton
+            className={`bg-brand text-white  border-2 `}
             onClick={onClick}
+            href={href}
         >
-            <span
-                className={`text-brand text-base font-semibold ${classNameChild}`}
-            >
-                {name}
-            </span>
-        </button>
+            {name}
+        </BaseButton>
     );
 };
 
-export const StyledButton = ({ name, className, onClick }) => {
+export const OutlineButton = ({ name, className, onClick, href }) => {
     return (
-        <button
-            className={`px-5 pt-[11px] pb-2.5 rounded-full ${className}`}
-            onClick={onClick} // Add onClick handler to the button
+        <BaseButton
+            className={`border border-border  text-primary ${className}`}
+            onClick={onClick}
+            href={href}
         >
-            <span className="uppercase text-center text-sm font-bold">
-                {name}
-            </span>
-        </button>
+            {name}
+        </BaseButton>
     );
 };
-export const OutlineButton = ({ name, className, classNameChild, color }) => {
+
+export const Tag = ({ name }) => {
     return (
-        <a
-            href="https://www.framer.com/?via=michael19"
-            className={`px-5 pt-[11px] pb-2.5 rounded-full border inline-block border-${color} ${className} group hover:bg-brand hover:bg-opacity-5`}
-        >
-            <span
-                className={`uppercase  text-sm font-medium ${classNameChild} text-${color} group-hover:text-brand group-hover:font-bold`}
-            >
-                {name}
-            </span>
-        </a>
+        <div className=" gap-4 inline-flex items-center justify-center h-10 px-4  ">
+            <div className="h-3 w-3 bg-emerald-500 rounded-full relative">
+                <div className="indicator h-3 w-3 bg-emerald-500 bg-opacity-40 rounded-full absolute left-0 top-0"></div>
+            </div>
+            <p className=" font-main font-semibold text-primary">{name}</p>
+        </div>
     );
 };

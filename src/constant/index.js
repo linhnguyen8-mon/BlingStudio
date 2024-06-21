@@ -1,22 +1,31 @@
+import starIcon from "../assets/star-06.svg";
+import folderIcon from "../assets/folder.svg";
+import infinityIcon from "../assets/infinity.svg";
+import attachmentIcon from "../assets/attachment-01.svg";
+
 export const navigation = [
     {
-        id: "1",
-        title: "Home",
-        url: "home",
-    },
-    {
         id: "2",
-        title: "Why us",
-        url: "whyus",
+        title: "About",
+        url: "about",
+        img: infinityIcon, // Directly assign the imported image variable
     },
     {
         id: "3",
-        title: "Service",
-        url: "service",
+        title: "Works",
+        url: "works",
+        img: folderIcon, // Directly assign the imported image variable
     },
     {
         id: "4",
-        title: "How it work",
-        url: "howitwork",
+        title: "Skills",
+        url: "skills",
+        img: starIcon, // Directly assign the imported image variable
+    },
+    {
+        id: "5",
+        title: "Notes",
+        url: "note",
+        img: attachmentIcon, // Directly assign the imported image variable
     },
 ];

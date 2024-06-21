@@ -17,16 +17,17 @@ export default {
                 main: ["Inter"],
             },
             colors: {
-                white: "#F5F5FC",
-                brand: "#156fe5",
-                background: "#F5F6FF",
-                primary: "#18191B",
-                secondary: "#707A95",
-                gradient: {
-                    start: "#1e2f51",
-                    middle: "#4C58B5",
-                    end: "#a2bfe9",
-                },
+                white: "#F7F0EC",
+                brand: "#261F1F",
+                background: "#F6ECE0",
+                primary: "#573308",
+                secondary: "#C89B71",
+                backgroundCard: "#F0D1B4",
+                backgroundCardHover: "#EBC8A8",
+                border: "#DFBC93",
+            },
+            boxShadow: {
+                "custom-light": "0 2px 4px rgba(200, 155, 113, 0.1)",
             },
         },
         container: {

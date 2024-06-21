@@ -1,77 +1,56 @@
 import { H1, H2, H3 } from "../components/Heading";
 import React, { useState } from "react";
-import MaskText from "../components/MaskText";
-import brief from "../assets/brief.svg";
-import conduct from "../assets/conduct.svg";
-import timeline from "../assets/timeline.svg";
-import design from "../assets/design.svg";
-import deliver from "../assets/deliver.svg";
+import dot from "../assets/dot.svg";
+import hashtag from "../assets/check-circle.svg";
 
 const HowItWork = () => {
-    const phrases = ["Simple process", "to create impactful result"];
     return (
-        <div className="smm:p-3 md:container md:p-8 relative my-[80px]">
-            <div className=" flex flex-col  p-8 min-h-[540px] gap-4 bg-white rounded-xl">
-                <div className=" flex flex-col justify-start col-span-1 gap-0">
-                    <div className="text-brand font-bold leading-loose">
-                        How it works
-                    </div>
-                    <MaskText phrases={phrases} textSize="5xl" />
+        <div className="container relative my-24">
+            <div className="relative z-10 flex flex-col gap-0">
+                <div className="group text-secondary opacity-20 hover:opacity-40 ">
+                    <H1>My</H1>
+                    <H1>Expertise</H1>
                 </div>
-                <div className=" grid smm:grid-cols-1 lg:grid-cols-5 gap-4">
+                <div className="grid grid-cols-2 gap-4 mt-16">
                     <AccordionItem
-                        icon={brief}
-                        title="Fill in the brief template"
-                        description="Provide with essential details to understand your project."
+                        title="Website/Mobile/Webapp"
+                        desc="Create cross-platform application"
                     />
                     <AccordionItem
-                        icon={conduct}
-                        title="Conduct research"
-                        description="Research our solutions align perfectly with your audience's expectation."
+                        title="UI Design"
+                        desc="Plan visual moodboard, create design system,..."
                     />
                     <AccordionItem
-                        icon={timeline}
-                        title="Send Timelines & Invoices"
-                        description="Provide a clear timeline throughout the process."
+                        title="UX strategy"
+                        desc="Conduct user testing, AI, detect user's pain points..."
                     />
                     <AccordionItem
-                        icon={design}
-                        title="Design & Refine"
-                        description="Wireframe, sketch, prototype, present, revise, handoff."
+                        title="Landing Pages"
+                        desc="Optimize the retention & conversion rate"
                     />
                     <AccordionItem
-                        icon={deliver}
-                        title="Deliver to Development"
-                        description="Deliver a polished, high-quality result that exceeds your expectations."
+                        title="Branding"
+                        desc="Create brand visually works for all platform"
                     />
                 </div>
             </div>
+            <img
+                src={dot}
+                alt=""
+                className="absolute bottom-0 left-0 scale-120 z-0"
+            />
         </div>
     );
 };
 
-const AccordionItem = ({ icon, title, description }) => {
-    const toggleAccordion = () => setIsOpen(!isOpen);
-
+const AccordionItem = ({ title, desc }) => {
     return (
-        <>
-            <div onClick={toggleAccordion}>
-                <div className="flex flex-col gap-3 justify-start pt-8 pb-3 group ">
-                    <img
-                        src={icon}
-                        alt=""
-                        className="w-12 bg-[#f0f1fe] p-2 rounded-xl group-hover:bg-[#fff] group-hover:shadow-slate-400 group-hover:shadow-2xl group-hover:shadow-opacity-50"
-                    />
-                    <H3 className="font-bold group-hover:text-brand ">
-                        {title}
-                    </H3>
-                </div>
-
-                <div className=" text-secondary font-normal font-main text-md mt-2">
-                    {description}
-                </div>
-            </div>
-        </>
+        <div className="flex gap-3 items-center group z-50">
+            <img src={hashtag} alt="" className="h-5" />
+            <H3 className="font-bold group-hover:text-brand">{title}</H3>
+            <p className="text-secondary">{desc}</p>
+        </div>
     );
 };
+
 export default HowItWork;
