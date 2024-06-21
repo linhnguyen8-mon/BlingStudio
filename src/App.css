@@ -3,143 +3,29 @@
     margin: 0 auto;
     box-sizing: border-box;
 }
+
 span {
     line-height: 130%;
 }
 body {
     background-color: #f5f6ff;
 }
-.animate-charcter {
-    text-transform: uppercase;
-    background-image: linear-gradient(
-        -225deg,
-        #231557 0%,
-        #44107a 29%,
-        #ff1361 67%,
-        #fff800 100%
-    );
-    background-size: auto auto;
-    background-clip: border-box;
-    background-size: 200% auto;
-    color: #fff;
-    background-clip: text;
-    text-fill-color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: textclip 2s linear infinite;
-    display: inline-block;
-    font-size: 190px;
+::-moz-selection {
+    background: #c89b71;
+}
+::-webkit-selection {
+    background: #c89b71;
+}
+::selection {
+    background: #c89b71;
 }
 
-@keyframes textclip {
-    to {
-        background-position: 200% center;
-    }
-}
-
-@keyframes moveUpDown {
-    0%,
-    100% {
-        transform: translateY(0);
-        opacity: 0;
-    }
-    50% {
-        transform: translateY(-20px);
-        opacity: 1;
-    }
-}
-
-.animate-moveUpDown {
-    animation: moveUpDown 8s infinite alternate; /* Adjust duration and other parameters as needed */
-}
-.animate-moveUpDown-fast {
-    animation: moveUpDown 2s infinite alternate; /* Adjust duration and other parameters as needed */
-}
-@keyframes glow {
-    0% {
-        opacity: 0.9;
-        transform: scale(1);
-        filter: drop-shadow(0 0 5px #ffffff00);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.1);
-        filter: drop-shadow(0 0 10px #156fe575);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-        filter: drop-shadow(0 0 15px #156fe5);
-    }
-}
-
-.glow {
-    animation: glow 2000ms infinite alternate;
-}
-
-@keyframes slideLeftRight {
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-.animate-slideLeftRight {
-    animation: slideLeftRight 600s linear infinite;
-}
-
-@keyframes moveUp {
-    0% {
-        transform: translateY(100%);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(0%);
-        opacity: 1;
-    }
-}
-@keyframes moveUpw {
-    0% {
-        transform: translateY(10%);
-        opacity: 0;
-    }
-    50% {
-        transform: translateY(10%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0%);
-        opacity: 1;
-    }
-}
-.animate-moveUp {
-    animation: moveUp 1s ease-out;
-}
-.animate-picture-moveUp {
-    animation: moveUpw 4s ease-out;
-}
 .smooth-hover {
     transition: bottom 0.3s ease-in-out;
 }
 
 .smooth-hover:hover {
     bottom: -80px;
-}
-.bg-gradient-to-b {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0),
-        rgba(132, 175, 185, 1)
-    );
-}
-.input-field {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f4f4f4;
-    color: #333;
 }
 .move-hover {
     transition: transform 0.3s ease;
@@ -149,64 +35,13 @@ body {
     transform: translateY(-10px); /* Adjust the value as needed */
 }
 
-.bg-clip-text {
-    text-shadow: #156fe5 0px 0 0px;
-    background-clip: text;
-    color: transparent;
-    background-image: linear-gradient(
-        to bottom,
-        #fff 55%,
-        #a2c0e972
-    ); /* Gradient colors */
-}
-.typewriter {
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: 0.15em solid rgb(255, 255, 255); /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: 0.2em; /* Adjust as needed */
-    animation: typing 2.5s steps(13, end), blink-caret 0.75s step-end infinite,
-        hide-caret 4.5s forwards;
-    height: 140px;
-}
-
-/* The typing effect */
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-    from,
-    to {
-        border-color: transparent;
-    }
-    100% {
-        border-color: rgb(255, 255, 255);
-    }
-}
-
-/* Hide caret animation */
-/* Hide caret animation */
-@keyframes hide-caret {
-    from {
-        border-color: rgb(255, 255, 255);
-        opacity: 1; /* Start with full opacity */
-    }
-    99% {
-        border-color: rgb(255, 255, 255);
-        opacity: 1; /* Start with full opacity */
-    }
-    to {
-        border-color: transparent;
-        opacity: 1; /* End with full transparency */
-    }
-}
 .parent-container {
     justify-content: center;
+}
+
+.icon {
+    color: #707a95;
+}
+.icon:hover {
+    color: #2c2c2c;
 }

@@ -1,146 +1,64 @@
 import Star from "../assets/Star.svg";
 import { H1 } from "../components/Heading";
-import sky from "../assets/sky.mp4";
-import React, { useState, useRef } from "react";
-import ReactCurvedText from "react-curved-text";
-import happy from "../assets/happy.mp3";
-import play from "../assets/Play.svg";
-import pause from "../assets/Pause.svg";
-import { Button } from "../components/Button";
-import cd from "../assets/cd.svg";
+import React, { useState, useRef, useEffect } from "react";
+import { FilledButton, OutlineButton, Tag } from "../components/Button";
 import close from "../assets/Close.svg";
+import dot from "../assets/dot.svg";
+import { scroller } from "react-scroll";
 
 const Header = () => {
-    const [isPlaying, setIsPlaying] = useState(false);
-    const audioRef = useRef(null);
+    const skills = [
+        "Design interfaces",
+        "Plan strategic outcome",
+        "Build user-centric products",
+    ];
+    const [currentSkill, handleSkill] = useState(0);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            handleSkill((prevSkill) => (prevSkill + 1) % skills.length);
+        }, 1000);
 
-    const togglePlayback = () => {
-        if (!isPlaying) {
-            audioRef.current.play();
-        } else {
-            audioRef.current.pause();
-        }
-        setIsPlaying(!isPlaying);
-    };
+        return () => clearInterval(interval);
+    }, [skills.length]);
 
-    const handleAudioEnded = () => {
-        setIsPlaying(false);
+    // Function to scroll to the "works" section
+    const scrollToWorks = () => {
+        scroller.scrollTo("works", {
+            duration: 800,
+            delay: 0,
+            smooth: "easeInOutQuart",
+        });
     };
 
     return (
         <>
-            <video
-                className="videoTag"
-                style={{
-                    position: "fixed",
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    left: 0,
-                    top: 0,
-                    scale: 2,
-                }}
-                autoPlay
-                loop
-                muted
-            >
-                <source src={sky} type="video/mp4" />
-            </video>
-
             {/* Content */}
             <div
-                className="text-white h-screen flex flex-col justify-center items-center relative"
+                className=" h-[768px] flex flex-col justify-center items-center relative"
                 id="home"
             >
+                <img
+                    src={dot}
+                    alt=""
+                    className="absolute top-0 left-0 scale-150"
+                />
                 {/* Heading */}
-                <div className="flex">
-                    <div className=" flex grow flex-col items-center">
-                        <H1
-                            children="Bling studio"
-                            className=" bg-clip-text text-transparent typewriter smm:text-5xl md:text-8xl lg:text-[120px] "
-                        />
-                        <div>
-                            <div className="flex gap-4 mt-6 smm:hidden lg:flex ">
-                                <Button
-                                    name="Mobile app"
-                                    className="cursor-default"
-                                />
-                                <Button
-                                    name="Web app "
-                                    className="cursor-default"
-                                />
-                                <Button
-                                    name="Website"
-                                    className="cursor-default"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div className="flex container z-10">
+                    <div className=" flex grow flex-col items-center ">
+                        <Tag name="Available for New project"></Tag>
+                        <p className="text-primary font-bold  smm:text-5xl md:text-7xl ">
+                            {skills[currentSkill]}
+                        </p>
+                        <p className="text-primary  smm:text-5xl md:text-7xl ">
+                            for your next startup
+                        </p>
 
-                {/* Scroll down span */}
-                <div className="absolute bottom-12 flex flex-col items-center justify-center gap-6">
-                    <span className="text-brand font-bold ">Scroll down</span>
-                    <img
-                        src={Star}
-                        alt=""
-                        className="h-3 animate-moveUpDown-fast"
-                        id="starImg"
-                    />
-                </div>
-
-                {/* Play sound */}
-                <div className="fixed bottom-8 right-8 z-50 smm:hidden 2xl:block">
-                    <div className="relative bg-[rgb(247,249,255)] rounded-full p-4 h-[140px] w-[140px] ">
-                        <img
-                            className={`absolute top-[52px] left-[58px] z-10 w-8 cursor-pointer ${
-                                isPlaying ? "hidden" : ""
-                            }`}
-                            src={play}
-                            alt=""
-                            onClick={togglePlayback} // Call togglePlayback function when the play button is clicked
-                        />
-                        <img
-                            className={`absolute top-[50px] left-[50px] z-10 w-10 cursor-pointer ${
-                                isPlaying ? "" : "hidden"
-                            }`}
-                            src={pause}
-                            alt=""
-                            onClick={togglePlayback} // Call togglePlayback function when the pause button is clicked
-                        />
-                        <div className="bg-brand  h-[80px] w-[80px] rounded-full absolute top-[30px] left-[30px] "></div>
-                        <img src={cd} alt="" />
-
-                        <div className="absolute top-[0px] left-[0px] text-brand">
-                            <ReactCurvedText
-                                width={140}
-                                height={140}
-                                cx={70}
-                                cy={70}
-                                rx={60}
-                                ry={60}
-                                startOffset={30}
-                                reversed={false}
-                                text="Turn on BG sound"
-                                textProps={{
-                                    style: { fontSize: 16, fontWeight: "600" },
-                                }}
-                                textPathProps={{ fill: "#156fe5" }}
+                        <div className="flex gap-4 lg:flex mt-12 ">
+                            <OutlineButton
+                                name="View my project"
+                                onClick={scrollToWorks}
                             />
                         </div>
-                    </div>
-                    <audio
-                        volume={20}
-                        ref={audioRef}
-                        src={happy}
-                        loop
-                        className="audio-player w-[420px]"
-                        onEnded={handleAudioEnded}
-                    />
-                </div>
-                <div className="fixed  bottom-[151px] right-[42px] z-50 flex items-center justify-center h-full">
-                    <div className="transform rotate-90 origin-bottom-left relative smm:hidden md:block">
-                        <ExpandableCard />
                     </div>
                 </div>
             </div>
