@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,3 +12,8 @@
         box-shadow: inset 0 2px 12px rgba(243, 193, 93, 0.3);
     }
 }
+@font-face {
+    font-family: 'YourFontFamilyName'; /* The name you'll use in your CSS */
+    src: local('./'); /* The exact name it has on your system */
+    /* Optional: Add more 'src' lines for fallback fonts if needed */
+  }

@@ -1,16 +1,13 @@
-import { H1, H2, H3 } from "../components/Heading";
 import React, { useState } from "react";
-import dot from "../assets/dot.svg";
-import hashtag from "../assets/check-circle.svg";
-
 const HowItWork = () => {
     return (
         <div className="container relative my-24">
-            <div className="relative z-10 flex flex-col gap-0">
-                <div className="group text-secondary opacity-20 hover:opacity-40 ">
-                    <H1>My</H1>
-                    <H1>Expertise</H1>
-                </div>
+            <div className="absolute top-6 left-9 bg-backgroundCard z-20"></div>
+            <div className="relative z-10 flex flex-col gap-0 p-8 bg-white rounded-2xl">
+                <p className="text-textColor  font-secondary italic text-6xl font-bold">
+                    My Expertise
+                </p>
+
                 <div className="grid grid-cols-2 gap-4 mt-16">
                     <AccordionItem
                         title="Website/Mobile/Webapp"
@@ -34,11 +31,7 @@ const HowItWork = () => {
                     />
                 </div>
             </div>
-            <img
-                src={dot}
-                alt=""
-                className="absolute bottom-0 left-0 scale-120 z-0"
-            />
+
         </div>
     );
 };
@@ -46,8 +39,7 @@ const HowItWork = () => {
 const AccordionItem = ({ title, desc }) => {
     return (
         <div className="flex gap-3 items-center group z-50">
-            <img src={hashtag} alt="" className="h-5" />
-            <H3 className="font-bold group-hover:text-brand">{title}</H3>
+            <p className="font-medium text-textColor text-3xl font-secondary">{title}</p>
             <p className="text-secondary">{desc}</p>
         </div>
     );

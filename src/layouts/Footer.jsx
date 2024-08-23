@@ -1,4 +1,3 @@
-import { H1, H2, H3 } from "../components/Heading";
 import React, { useState } from "react";
 import twitter from "../assets/twitter.svg";
 import behance from "../assets/behance.svg";
@@ -8,9 +7,11 @@ import notion from "../assets/notion.svg";
 const Footer = () => {
     return (
         <div className="container mb-6">
-            <div className=" bg-backgroundCard p-8 rounded-3xl z-40 ">
+            <div className=" bg-textColor p-8 rounded-3xl z-40 ">
                 <div className="flex justify-between">
-                    <H2>Feel free to reach out</H2>
+                    <p className="text-white  font-secondary italic text-6xl font-bold">
+                        Feel free to reach out
+                    </p>
                     <div className="flex gap-4 ">
                         <Icon
                             href="https://www.behance.net/LungLinhHuyenAo"
@@ -27,8 +28,8 @@ const Footer = () => {
                         /> */}
                     </div>
                 </div>
-                <div className="w-full h-[1px] bg-border my-8"></div>
-                <span className="text-primary ">
+                <div className="w-full h-[1px] bg-white my-8"></div>
+                <span className="text-white ">
                     @ 2024 - Designed and Developed by Linh | Bling Studio
                 </span>
             </div>
@@ -41,11 +42,11 @@ export default Footer;
 const Icon = ({ img, href }) => {
     return (
         <a
-            className="w-12 h-12 bg-primary rounded-3xl flex justify-center items-center"
+            className="w-12 h-12 bg-white rounded-3xl flex justify-center items-center"
             href={href}
             target="_blank"
         >
-            <img className="w-8" src={img} alt="figma" />
+            <img className="w-8  " src={img} alt="figma" />
         </a>
     );
 };

@@ -15,19 +15,21 @@ export default {
         extend: {
             fontFamily: {
                 main: ["Inter"],
+                secondary:["DM Serif Display"]
             },
             colors: {
-                white: "#F7F0EC",
+                white: "#fff",
                 brand: "#261F1F",
-                background: "#F6ECE0",
-                primary: "#573308",
-                secondary: "#C89B71",
-                backgroundCard: "#F0D1B4",
-                backgroundCardHover: "#EBC8A8",
-                border: "#DFBC93",
+                background: "#EFF8FF",
+                primary: "#353945",
+                secondary: "#9299A2",
+                backgroundCard: "#DDF1FC",
+                backgroundCardHover: "#fff",
+                border: "#ACADB6",
+                textColor:"#B2DBF1"
             },
             boxShadow: {
-                "custom-light": "0 2px 4px rgba(200, 155, 113, 0.1)",
+                "custom-light": "rgba(14, 63, 126, 0.04) 0px 0px 0px 1px, rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.04) 0px 6px 6px -3px, rgba(14, 63, 126, 0.04) 0px 12px 12px -6px, rgba(14, 63, 126, 0.04) 0px 24px 24px -12px;",
             },
         },
         container: {

@@ -5,7 +5,7 @@ import { FilledButton, OutlineButton, Tag } from "../components/Button";
 import close from "../assets/Close.svg";
 import dot from "../assets/dot.svg";
 import { scroller } from "react-scroll";
-
+import svg from '../assets/svg.png'
 const Header = () => {
     const skills = [
         "Design interfaces",
@@ -34,7 +34,7 @@ const Header = () => {
         <>
             {/* Content */}
             <div
-                className=" h-[768px] flex flex-col justify-center items-center relative"
+                className=" h-[1000px] flex flex-col justify-center items-center relative"
                 id="home"
             >
                 <img
@@ -43,16 +43,15 @@ const Header = () => {
                     className="absolute top-0 left-0 scale-150"
                 />
                 {/* Heading */}
-                <div className="flex container z-10">
-                    <div className=" flex grow flex-col items-center ">
-                        <Tag name="Available for New project"></Tag>
-                        <p className="text-primary font-bold  smm:text-5xl md:text-7xl ">
+                <div className="flex container relative">
+                    <div className=" flex grow flex-col items-center z-50 ">
+                        <Tag name="Available for new project"></Tag>
+                        <p className="font-secondary italic text-white font-bold text-8xl ">
                             {skills[currentSkill]}
                         </p>
-                        <p className="text-primary  smm:text-5xl md:text-7xl ">
+                        <p className="text-primary font-medium opacity-80 text-7xl  ">
                             for your next startup
                         </p>
-
                         <div className="flex gap-4 lg:flex mt-12 ">
                             <OutlineButton
                                 name="View my project"
@@ -61,6 +60,10 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
+                <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
+                    <img src={svg} alt="" className="w-full" />
+                </div>
+
             </div>
         </>
     );
@@ -75,14 +78,12 @@ const ExpandableCard = () => {
 
     return (
         <div
-            className={`w-[400px] absolute  left-8 bottom-[0px] ${
-                isExpanded ? "translate-y-[8px]" : ""
-            }`}
+            className={`w-[400px] absolute  left-8 bottom-[0px] ${isExpanded ? "translate-y-[8px]" : ""
+                }`}
         >
             <div
-                className={` duration-500 ease-in-out ${
-                    isExpanded ? "h-[auto]" : "h-[64px]"
-                }`}
+                className={` duration-500 ease-in-out ${isExpanded ? "h-[auto]" : "h-[64px]"
+                    }`}
             >
                 <div
                     className="cursor-pointer relative"
@@ -102,9 +103,8 @@ const ExpandableCard = () => {
 };
 const CollapsedTags = ({ isHovered }) => (
     <div
-        className={`transition-transform ${
-            isHovered ? "translate-y-[8px]" : ""
-        }`}
+        className={`transition-transform ${isHovered ? "translate-y-[8px]" : ""
+            }`}
     >
         <Button
             name="Get to know us"

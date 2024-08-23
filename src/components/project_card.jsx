@@ -1,4 +1,3 @@
-// project_1.jsx
 
 const TemplateCard = ({ children }) => {
     return (

@@ -1,17 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { useTransform, motion, useAnimation } from "framer-motion";
-import shadow from "../assets/shadow.svg";
-import img_1 from "../assets/Audio book.png";
-import img_2 from "../assets/EdTech.png";
-import img_3 from "../assets/kindergarden.png";
-import img_4 from "../assets/EdTech-2.png";
-import img_5 from "../assets/Summer camp.png";
-import img_6 from "../assets/Sudoku.png";
-import img_7 from "../assets/Travel.png";
-import img_8 from "../assets/Transportation.png";
-import img_9 from "../assets/Workout.png";
-import img_10 from "../assets/Workout-1.png";
-import img_11 from "../assets/website.png";
+import img_1 from "../assets/screen/concept_01.png";
+import img_2 from "../assets/screen/kindergarden.png";
+import img_3 from "../assets/screen/concept_03.png";
+import img_4 from "../assets/screen/concept_04.png";
+import img_5 from "../assets/screen/Product.png";
+import img_6 from "../assets/screen/concept_06.png";
+import img_7 from "../assets/screen/concept_07.png";
+import img_8 from "../assets/screen/concept_08.png";
+import img_9 from "../assets/screen/_th.png";
+import img_10 from "../assets/screen/Travel.png";
+import img_11 from "../assets/screen/website.png";
 import img_12 from "../assets/img/img_12.png";
 
 const images = [
@@ -84,10 +83,10 @@ const Showreel = () => {
     return (
         <div className="container rounded-2xl overflow-hidden relative ">
             <div
-                className="grid grid-cols-3 h-[600px] bg-[#fff]  relative gap-12 "
+                className="grid grid-cols-4 h-[700px] relative gap-12 mask-showreel"
                 ref={galleryRef}
             >
-                {Array.from({ length: 3 }).map((_, i) => (
+                {Array.from({ length: 4 }).map((_, i) => (
                     <div className="relative" key={i}>
                         <Column
                             images={images.slice(i * 3, i * 3 + 3)}
@@ -104,16 +103,16 @@ const Showreel = () => {
 const Column = ({ images, className, animation }) => {
     return (
         <motion.div
-            className={`flex flex-col gap-12 absolute ${className}`}
+            className={`flex flex-col gap-8 absolute ${className}`}
             animate={animation}
         >
             {images.map((img, index) => (
                 <div key={index} className="relative rounded-sm group ">
                     <img
-                        className="object-cover"
+                        className="object-cover rounded-md p-3 bg-background bg-opacity-40"
                         src={img}
                         alt={`Image ${index + 1}`}
-                        width="620px"
+                        width="500px"
                     />
                 </div>
             ))}

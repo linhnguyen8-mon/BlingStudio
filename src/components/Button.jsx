@@ -4,15 +4,17 @@ const BaseButton = ({ children, className, onClick, href }) => {
     const Component = href ? "a" : "button";
     const props = href ? { href } : { onClick };
     return (
-        <Component
-            className={`inline-flex items-center justify-center h-16 px-8 rounded-full font-main font-semibold  ${className}
-            hover:shadow-xl   hover:shadow-orange-100 hover:px-10
+        <div className="p-[8px] bg-background bg-opacity-20 hover:bg-opacity-50 rounded-full border border-blue-100 border-opacity-20 transition duration-300 ease-in-out ">
+            <Component
+                className={`inline-flex items-center justify-center h-14 px-6 rounded-full font-main font-semibold  bg-backgroundCardHover ${className}
+            hover:shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] 
             `}
-            target="_blank"
-            {...props}
-        >
-            {children}
-        </Component>
+                target="_blank"
+                {...props}
+            >
+                {children}
+            </Component>
+        </div>
     );
 };
 
@@ -23,7 +25,7 @@ export const IconButton = ({ svg, name, onClick }) => {
                 className={` border-primary border-2  `}
                 onClick={onClick}
             >
-                <span className="text-primary text-base font-bold group-hover:text-brand  whitespace-nowrap">
+                <span className="text-primary text-base font-bold group-hover:text-brand whitespace-nowrap">
                     {name}
                 </span>
                 <img src={svg} alt="Icon" className="w-4 h-4 icon " />
@@ -47,7 +49,7 @@ export const FilledButton = ({ name, className, onClick, href }) => {
 export const OutlineButton = ({ name, className, onClick, href }) => {
     return (
         <BaseButton
-            className={`border border-border  text-primary ${className}`}
+            className={` text-primary text-opacity-80 hover:text-opacity-100 ${className}`}
             onClick={onClick}
             href={href}
         >
@@ -58,11 +60,9 @@ export const OutlineButton = ({ name, className, onClick, href }) => {
 
 export const Tag = ({ name }) => {
     return (
-        <div className=" gap-4 inline-flex items-center justify-center h-10 px-4  ">
-            <div className="h-3 w-3 bg-emerald-500 rounded-full relative">
-                <div className="indicator h-3 w-3 bg-emerald-500 bg-opacity-40 rounded-full absolute left-0 top-0"></div>
-            </div>
-            <p className=" font-main font-semibold text-primary">{name}</p>
+        <div className=" gap-3 inline-flex items-center justify-center mb-8 py-2 px-4 bg-[#fff] bg-opacity-30 hover:bg-opacity-70 border border-blue-200 border-opacity-30 rounded-full  ">
+            <div className="h-2 w-2 bg-emerald-500 rounded-full relative"> </div>
+            <p className=" text-md font-medium text-primary text-opacity-75">{name}</p>
         </div>
     );
 };

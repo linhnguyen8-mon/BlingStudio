@@ -1,12 +1,10 @@
-import { H1 } from "../components/Heading";
 import { OutlineButton } from "../components/Button";
 const OurWork = () => {
     return (
         <div className="container my-24">
             <div className="flex justify-between items-center">
-                <H1 className="text-secondary opacity-20 hover:opacity-40">
-                    Notes
-                </H1>
+                <p className="text-textColor  font-secondary italic text-6xl font-bold">
+                    Notes                </p>
                 <OutlineButton
                     name="See more"
                     href="https://blingstudio.notion.site/Knowledge-card-e05983155fa8464eae105766eeed7f0d"
@@ -55,10 +53,10 @@ const Note = ({
 }) => {
     return (
         <div>
-            <div className="font-semibold text-primary mb-2 group-hover:text-primary">
+            <div className="font-secondary text-2xl text-primary mb-2 group-hover:text-primary">
                 {title}
             </div>
-            <div className="text-secondary hover:text-primary">
+            <div className="text-secondary ">
                 <div>{content1}</div>
                 <div>{content2}</div>
                 <div>{content3}</div>
@@ -72,7 +70,7 @@ const Note = ({
 
 const Card = ({ children }) => {
     return (
-        <div className="group container relative mt-4 rounded-3xl p-8 text-xl bg-backgroundCard shadow-custom-light  before:pointer-events-none hover:before:shadow-inner-card-hover">
+        <div className="group container relative mt-4 rounded-3xl p-8 text-xl bg-[#fff] hover:shadow-custom-light  before:pointer-events-none hover:before:shadow-inner-card-hover">
             {children}
         </div>
     );

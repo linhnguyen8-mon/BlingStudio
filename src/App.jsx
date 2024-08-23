@@ -18,6 +18,7 @@ import { navigation } from "./constant/index";
 import logo from "./assets/blingicon.svg";
 import ProjectPage from "./pages/ProjectPage";
 
+
 const App = () => {
     return (
         <div className="w-screen bg-background 4xl:container overflow-hidden relative cursor-default">
@@ -44,13 +45,14 @@ const HomePage = () => {
             sessionStorage.removeItem("scrollPosition");
         } else {
             scroller.scrollTo("works", {
-                duration: 1500,
+                duration: 800,
                 delay: 100,
                 smooth: true,
                 offset: 100,
             });
         }
     }, []);
+
 
     return (
         <>
@@ -94,9 +96,9 @@ const NavBar = () => {
     }
 
     return (
-        <div className="m-4 fixed z-50 w-screen flex items-center">
+        <div className="m-4 fixed z-[9999] w-screen flex items-center top-0 left-0">
             <div className="mx-auto">
-                <nav className="py-3 mx-2 rounded-3xl flex gap-4 justify-between items-center bg-backgroundCard backdrop-blur-lg bg-opacity-80">
+                <nav className="py-3 mx-2 rounded-3xl flex gap-4 justify-between items-center bg-backgroundCard backdrop-blur-lg bg-opacity-80 border-[0.5px] border-backgroundCard border-opacity-50 hover:bg-opacity-90 z-100 shadow-[rgba(7,_65,_210,_0.01)_0px_9px_30px] ">
                     <Link
                         to="home"
                         activeClass="active"
@@ -124,11 +126,10 @@ const NavBar = () => {
                                     smooth={true}
                                     offset={-100}
                                     duration={500}
-                                    className={`cursor-pointer p-2.5 px-4 flex gap-2 hover:bg-backgroundCardHover rounded-xl hover:text-primary relative ${
-                                        activeSection === item.url
-                                            ? "active font-bold bg-backgroundCardHover"
-                                            : ""
-                                    }`}
+                                    className={`cursor-pointer p-2.5 px-4 flex gap-2 hover:bg-backgroundCardHover rounded-xl hover:text-primary relative ${activeSection === item.url
+                                        ? "active font-bold bg-backgroundCardHover"
+                                        : ""
+                                        }`}
                                     onSetActive={handleSetActive}
                                 >
                                     {activeSection === item.url && (
