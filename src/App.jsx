@@ -12,13 +12,16 @@ import Service from "./pages/Service";
 import HowItWork from "./layouts/HowItWork";
 import OurWork from "./layouts/OurWork";
 import Footer from "./layouts/Footer";
-import { Link, Element, animateScroll as scroll, scroller } from "react-scroll";
+import { Link, Element, animateScroll as scroll } from "react-scroll";
 import { useState, useEffect } from "react";
 import { navigation } from "./constant/index";
 import logo from "./assets/blingicon.svg";
-import ProjectPage from "./pages/ProjectPage";
-
-
+import Project1 from "./components/project_1";
+import Project2 from "./components/project_2";
+import Project3 from "./components/project_3";
+import Project4 from "./components/project_4.jsx";
+import Project5 from "./components/project_5.jsx";
+import Project6 from "./components/project_6.jsx";
 const App = () => {
     return (
         <div className="w-screen bg-background 4xl:container overflow-hidden relative cursor-default">
@@ -26,6 +29,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/projects/*" element={<ProjectPage />} />
+
             </Routes>
         </div>
     );
@@ -36,46 +40,6 @@ const saveScrollPosition = () => {
     if (worksSection) {
         sessionStorage.setItem("scrollPosition", worksSection.offsetTop);
     }
-};
-const HomePage = () => {
-    useEffect(() => {
-        const scrollPosition = sessionStorage.getItem("scrollPosition");
-        if (scrollPosition) {
-            window.scrollTo(0, parseInt(scrollPosition));
-            sessionStorage.removeItem("scrollPosition");
-        } else {
-            scroller.scrollTo("works", {
-                duration: 800,
-                delay: 100,
-                smooth: true,
-                offset: 100,
-            });
-        }
-    }, []);
-
-
-    return (
-        <>
-            <Element name="header">
-                <Header />
-            </Element>
-            <Element name="about">
-                <Intro />
-            </Element>
-            <Element name="works">
-                <Service />
-            </Element>
-            <Element name="skills">
-                <HowItWork />
-            </Element>
-            <Element name="note">
-                <OurWork />
-            </Element>
-            <Element name="footer">
-                <Footer />
-            </Element>
-        </>
-    );
 };
 
 const NavBar = () => {
@@ -145,6 +109,52 @@ const NavBar = () => {
                 </nav>
             </div>
         </div>
+    );
+};
+const HomePage = () => {
+    useEffect(() => {
+        const scrollPosition = sessionStorage.getItem("scrollPosition");
+        if (scrollPosition) {
+            window.scrollTo(0, parseInt(scrollPosition));
+            sessionStorage.removeItem("scrollPosition");
+        }
+        // Removed automatic scrolling to "works"
+    }, []);
+
+    return (
+        <>
+            <Element name="header">
+                <Header />
+            </Element>
+            <Element name="about">
+                <Intro />
+            </Element>
+            <Element name="works">
+                <Service />
+            </Element>
+            <Element name="skills">
+                <HowItWork />
+            </Element>
+            <Element name="note">
+                <OurWork />
+            </Element>
+            <Element name="footer">
+                <Footer />
+            </Element>
+        </>
+    );
+};
+
+const ProjectPage = () => {
+    return (
+        <Routes>
+            <Route path="1" element={<Project1 />} />
+            <Route path="2" element={<Project2 />} />
+            <Route path="3" element={<Project3 />} />
+            <Route path="4" element={<Project4 />} />
+            <Route path="5" element={<Project5 />} />
+            <Route path="6" element={<Project6 />} />
+        </Routes>
     );
 };
 

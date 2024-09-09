@@ -14,21 +14,36 @@ import vid1 from '../assets/lottiefiles/bus.json'; // Lottie JSON animation file
 import vid2 from '../assets/lottiefiles/eng.json'; // Lottie JSON animation file
 import vid3 from '../assets/lottiefiles/kid.json'; // Lottie JSON animation file
 import Lottie from 'lottie-react'; // Default import for Lottie
+import AboutThisProject from './project_content/about_this_project'
+import { Visual, System, Research, Branding, Architecture, Skill } from './project_content/skill';
+import Overview from './project_content/overview'
+
 const Project4 = () => {
     return (
         <ProjectTemplate
-            project="Concept"
+            project="UI Concepts"
             thumbnail={thumbnail}
             Month="Month"
             Year="2022"
             nametag="mobile"
-            themeColor="bg-gradient-to-r from-emerald-900 to-cyan-900"
+            themeColor="bg-gradient-to-r from-slate-950 to-gray-800"
             buttonColor="bg-blue-500"
-            contentAbout="Personal Project | Designed to highlight my expertise in UI/UX design and web development."
+            AboutThisProject={
+                <AboutThisProject
+                    Type_of_project="Personal project"
+                    Service="  Designed to highlight my expertise in UI/UX design and web development."
+                    Client="Various"
+                />
+            }
+            Skill={
+                <Skill>
+                    <Visual />
+                </Skill>
+            }
             timeline="2022 - 2023"
             check1="Developed multiple styles and categories to ensure diverse and flexible design options."
             check2="Focused on making it more interesting and visually pleasing."
-            check3=""
+            check3="Experimented with diverse UI elements and interactions to refine design approaches."
             contentOverview="To explore different concepts, I concentrated on 2-3 screens, experimenting with various styles."
             img1={img1}
             img2={img2}
@@ -38,7 +53,8 @@ const Project4 = () => {
             img6={img6}
             img7={img7}
             img8={img8}
-            children1="Visual design"
+            nextId="/projects/5"
+            previousId="/projects/3"
         >
             <div className="rounded-xl overflow-hidden">
                 <Lottie animationData={vid1} loop={true} autoplay={true} />

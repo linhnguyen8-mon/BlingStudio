@@ -56,7 +56,7 @@ const Note = ({
             <div className="font-secondary text-2xl text-primary mb-2 group-hover:text-primary">
                 {title}
             </div>
-            <div className="text-secondary ">
+            <div className="text-secondary text-lg ">
                 <div>{content1}</div>
                 <div>{content2}</div>
                 <div>{content3}</div>
@@ -70,7 +70,11 @@ const Note = ({
 
 const Card = ({ children }) => {
     return (
-        <div className="group container relative mt-4 rounded-3xl p-8 text-xl bg-[#fff] hover:shadow-custom-light  before:pointer-events-none hover:before:shadow-inner-card-hover">
+        <div className="group container relative mt-4 rounded-2xl p-8 text-xl 
+        bg-backgroundCard hover:bg-white
+         hover:shadow-[rgba(7,_65,_210,_0.02)_0px_9px_20px]   before:pointer-events-none hover:before:shadow-inner-card-hover
+        
+            hover:ring-offset-2 hover:ring-2 ring-blue-100 	">
             {children}
         </div>
     );

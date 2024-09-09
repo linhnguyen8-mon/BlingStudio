@@ -11,7 +11,9 @@ import img7 from '../assets/screen/CW_7.png';
 import img8 from '../assets/screen/CW_8.png';
 import second from '../assets/lottiefiles/booking.json'; // Lottie JSON animation file
 import Lottie from 'lottie-react'; // Default import for Lottie
-
+import AboutThisProject from './project_content/about_this_project'
+import { Visual, System, Research, Branding, Architecture, Skill } from './project_content/skill';
+import Overview from './project_content/overview'
 const Project1 = () => {
     return (
         <>
@@ -23,12 +25,29 @@ const Project1 = () => {
                 themeColor="bg-gradient-to-r from-indigo-900 to-cyan-950"
                 buttonColor="bg-blue-500"
                 project="CoWorking Space"
-                contentAbout="Personal Project | Designed to help users find the ideal co-working space by categorizing options to meet diverse needs. "
+
+                AboutThisProject={
+                    <AboutThisProject
+                        Type_of_project="Personal project"
+                        Service="A mobile app for booking co-working space"
+                        Client="Client needs to find suitable co-working spaces that meet their diverse needs"
+                    />
+                }
+                Skill={
+                    <Skill>
+                        <Visual />
+                        <Research />
+                    </Skill>
+                }
+                contentOverview={
+                    <Overview
+                        r1="Focused on tailoring the search experience to match individual preferences"
+                        s1="nj" />
+                }
                 timeline="Sep 2022 - Oct 2022"
-                check1="Designed a user flow tailored for beginners."
-                check2="Optimized the overall experience to ensure ease of use."
-                check3="Enhanced visual quality to create a more appealing interface."
-                contentOverview="Focused on tailoring the search experience to match individual preferences, with each category addressing specific user demands for a more personalized selection process.   "
+                check1="Designed custom icons and graphics to improve aesthetic appeal and user engagement."
+                check2="Streamlined booking and reservation processes for coworking spaces with minimal steps and clear instructions."
+                check3="Tested the app on multiple devices to verify responsive behavior and functionality."
                 img1={img1}
                 img2={img2}
                 img3={img3}
@@ -37,7 +56,8 @@ const Project1 = () => {
                 img6={img6}
                 img7={img7}
                 img8={img8}
-                children1="Visual design"
+                nextId="/projects/2"
+                previousId="/projects/6"
             >
                 <div className="rounded-xl overflow-hidden">
                     <Lottie animationData={second} loop={true} autoplay={true} />

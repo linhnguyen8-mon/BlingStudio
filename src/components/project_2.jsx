@@ -13,23 +13,45 @@ import img8 from '../assets/screen/TC_08.png'
 
 import second from '../assets/lottiefiles/project_2.json'; // Lottie JSON animation file
 import Lottie from 'lottie-react'; // Default import for Lottie
+import AboutThisProject from './project_content/about_this_project'
+import { Visual, System, Research, Branding, Architecture, Skill } from './project_content/skill';
+import Overview from './project_content/overview'
+
 const Project2 = () => {
     return (
         <ProjectTemplate
             project="Rova Website"
-            thumbnail={thumbnail}
+            thumbnail={img1}
             Month="Aug"
             Year="2023"
-            nametag="mobile"
-            themeColor="bg-gradient-to-r from-slate-900 to-blue-950"
+            nametag="website | mobile"
+            themeColor="bg-gradient-to-r from-slate-950 to-blue-950"
             buttonColor="bg-blue-500"
-            contentAbout="Client Project | Delivered services related to cloud integration and web development."
+            AboutThisProject={
+                <AboutThisProject
+                    Type_of_project="Client project"
+                    Service="Delivered services related to cloud integration and web development"
+                    Client="Client find the data storage and management solution that meets their needs"
+                />
+            }
+            Skill={
+                <Skill>
+                    <Visual />
+                    <Research />
+                    <System />
+                    <Branding />
+                    <Architecture />
+                </Skill>
+            }
+            contentOverview={
+                <Overview
+                    r1="The client's vision is a sleek, technology-driven website with a minimalist design. "
+                    s1=" Over the course of two months, I have been committed to delivering this project, consistently refining it through iterative updates and feedback to ensure alignment with the client’s aspirations." />
+            }
             timeline="Aug 2023 - Nov 2023"
-            check1="Developed comprehensive flow & design system, ensuring quality and consistency across 80+ screens."
-            check2="Created responsive designs optimized for both mobile and desktop."
-            check3="Focused on solving their pain points to increase conversion rate & drive user engagement."
-            contentOverview="The client's vision is a sleek, technology-driven website with a minimalist design. 
-            Over the course of two months, I have been committed to delivering this project, consistently refining it through iterative updates and feedback to ensure alignment with the client’s aspirations."
+            check1="Developed a comprehensive flow & design system for 80+ screens."
+            check2="Focused on solving user pain points to increase conversion rate and drive engagement."
+            check3="Ensured responsive design and functionality across devices"
             img1={img1}
             img2={img2}
             img3={img3}
@@ -38,7 +60,8 @@ const Project2 = () => {
             img6={img6}
             img7={img7}
             img8={img8}
-            children1={"Design System, Visual design, Research, Architecture Information"}
+            nextId="/projects/3"
+            previousId="/projects/1"
         >
 
             <div className="rounded-xl overflow-hidden">

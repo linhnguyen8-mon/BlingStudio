@@ -1,14 +1,16 @@
 import React, { useState } from "react";
+import grid from '../assets/grid.png'
 const HowItWork = () => {
     return (
-        <div className="container relative my-24">
-            <div className="absolute top-6 left-9 bg-backgroundCard z-20"></div>
-            <div className="relative z-10 flex flex-col gap-0 p-8 bg-white rounded-2xl">
-                <p className="text-textColor  font-secondary italic text-6xl font-bold">
+        <div className=" container my-24">
+            <div className="gradient-bg overflow-hidden	  relative z-10 flex flex-col gap-0 p-8 pb-0 bg-white rounded-2xl shadow-[rgba(7,_65,_210,_0.02)_0px_9px_20px] ">
+                <p className="text-white  font-secondary italic text-6xl font-bold">
                     My Expertise
                 </p>
-
-                <div className="grid grid-cols-2 gap-4 mt-16">
+                <img src={grid} className="absolute bottom-0 scale-70 opacity-30 " alt="" />
+                <div className="grid grid-cols-2 gap-4 mt-12 p-10 
+                bg-white rounded-t-2xl  backdrop-blur-2xl bg-opacity-20
+                ring-1 ring-white ring-opacity-40">
                     <AccordionItem
                         title="Website/Mobile/Webapp"
                         desc="Create cross-platform application"
@@ -40,7 +42,7 @@ const AccordionItem = ({ title, desc }) => {
     return (
         <div className="flex gap-3 items-center group z-50">
             <p className="font-medium text-textColor text-3xl font-secondary">{title}</p>
-            <p className="text-secondary">{desc}</p>
+            <p className="text-white">{desc}</p>
         </div>
     );
 };
