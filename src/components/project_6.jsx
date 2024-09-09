@@ -41,10 +41,12 @@ const Project6 = () => {
             }
             contentOverview={
                 <Overview
-                    r1="Modern, Clean Design with Dark Mode"
-                    s1="The website should feature a modern, clean design with a dark mode theme and a distinctive branding orange color."
+                    r1="Modern, Clean Design for targest users"
+                    s1="Created a visually appealing, modern design incorporating a dark mode for user comfort. The distinctive branding orange color enhances recognition and visual impact.
+"
                     r2="Global Audience Considerations"
-                    s2="The design must effectively showcase network and expansion capabilities, accommodate both light and dark themes, and support multiple languages to ensure accessibility and usability for a diverse global audience."
+                    s2="Designed to support content expansion and accommodate multiple languages to ensure global accessibility.
+"
                 />
             }
             timeline="Jun 2024 - Jul 2024"

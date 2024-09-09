@@ -204,10 +204,10 @@ const Img = ({ src, height = "h-[240px]", openModal }) => (
 const Tag = ({ name, themeColor }) => (
     <div className=" w-fit">
         <div
-            className={`relative z-10 flex w-full cursor-pointer items-center overflow-hidden rounded-full ${themeColor} animated-border`}
+            className={`relative z-10 flex w-full cursor-pointer items-center overflow-hidden rounded-full ${themeColor} animated-border border-[0.5px] opacity-60`}
             style={{ borderColor: themeColor }} // Apply dynamic border color
         >
-            <div className={`relative z-20 flex w-full  bg-${themeColor} p-1 px-3 text-[12px]`}>
+            <div className={`relative z-20 flex w-full  bg-${themeColor} p-0.5 px-3 text-[12px] `}>
                 {name}
             </div>
         </div>

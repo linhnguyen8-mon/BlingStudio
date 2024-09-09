@@ -45,8 +45,8 @@ const Project2 = () => {
             }
             contentOverview={
                 <Overview
-                    r1="The client's vision is a sleek, technology-driven website with a minimalist design. "
-                    s1=" Over the course of two months, I have been committed to delivering this project, consistently refining it through iterative updates and feedback to ensure alignment with the client’s aspirations." />
+                    r1="A sleek, tech-driven website for tech-savvy clients"
+                    s1="Used minimalistic design and bold headings to enhance visual appeal and simplified content for better navigation." />
             }
             timeline="Aug 2023 - Nov 2023"
             check1="Developed a comprehensive flow & design system for 80+ screens."
