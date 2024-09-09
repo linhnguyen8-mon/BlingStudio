@@ -15,7 +15,7 @@ export default {
         extend: {
             fontFamily: {
                 main: ["Inter"],
-                secondary:["DM Serif Display"]
+                secondary: ["DM Serif Display"]
             },
             colors: {
                 white: "#fff",
@@ -26,12 +26,23 @@ export default {
                 backgroundCard: "#DDF1FC",
                 backgroundCardHover: "#fff",
                 border: "#ACADB6",
-                textColor:"#B2DBF1"
+                textColor: "#B2DBF1"
             },
             boxShadow: {
                 "custom-light": "rgba(14, 63, 126, 0.04) 0px 0px 0px 1px, rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.04) 0px 6px 6px -3px, rgba(14, 63, 126, 0.04) 0px 12px 12px -6px, rgba(14, 63, 126, 0.04) 0px 24px 24px -12px;",
             },
+            animation: {
+                rotate: "rotate 10s linear infinite",
+            },
+            keyframes: {
+                rotate: {
+                    "0%": { transform: "rotate(0deg) scale(10)" },
+                    "100%": { transform: "rotate(-360deg) scale(10)" },
+                },
+        
+            },
         },
+    
         container: {
             center: true,
             padding: "2rem",

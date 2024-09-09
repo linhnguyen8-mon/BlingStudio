@@ -45,5 +45,42 @@ body {
         rgba(0, 0, 0, 0) 100%
     );
 }
+@keyframes gradientAnimation {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(45deg, #265395,#192044, #1960cb, #5364a9);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+  }
+  
 
-
+  /* Define the keyframes for the border animation */
+@keyframes borderAnimation {
+    0% {
+      border-color: #f9fdff;
+    }
+    50% {
+      border-color: #38a8f8;
+    }
+    100% {
+      border-color: #94dee5;
+    }
+  }
+  
+  /* Apply animation to the border */
+  .animated-border {
+    border: 2px solid;
+    animation: borderAnimation 2s infinite;
+  }
+  
+  

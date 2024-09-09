@@ -10,7 +10,7 @@ const Service = () => {
     return (
         <div className="container mx-auto relative my-40 mt-60">
             <div className="font-medium leading-loose flex flex-col gap-2 mb-8">
-                <p className="text-backgroundCard text-5xl">
+                <p className="text-textColor text-5xl">
                     Helping startups create
                 </p>
                 <p className="text-textColor font-secondary italic text-6xl font-bold">

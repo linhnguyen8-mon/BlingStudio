@@ -9,6 +9,10 @@ import img4 from '../assets/screen/outsource_04.png'
 import vid1 from '../assets/lottiefiles/pass.json'; // Lottie JSON animation file
 import vid2 from '../assets/lottiefiles/edu.json'; // Lottie JSON animation file
 import Lottie from 'lottie-react'; // Default import for Lottie
+import AboutThisProject from './project_content/about_this_project'
+import { Visual, System, Research, Branding, Architecture, Skill } from './project_content/skill';
+import Overview from './project_content/overview'
+
 const Project3 = () => {
     return (
         <ProjectTemplate
@@ -17,23 +21,41 @@ const Project3 = () => {
             Month="Nov"
             Year="2023"
             nametag="mobile"
-            themeColor="bg-gradient-to-r from-rose-950 to-blue-950"
+            themeColor="bg-gradient-to-r from-teal-950 to-blue-950"
             buttonColor="bg-blue-500"
-            contentAbout="Client Project | Developed a mini-app within the Zalo super app ecosystem."
+            AboutThisProject={
+                <AboutThisProject
+                    Type_of_project="Client project"
+                    Service=" Developed a mini-app within the Zalo super app ecosystem."
+                    Client="Client find a solution in miniapp"
+                />
+            }
+            Skill={
+                <Skill>
+                    <Visual />
+                    <Research />
+                </Skill>
+            }
             timeline="Nov 2023 - Feb 2024"
             check1="Conducted user research tailored to the specific needs of target userss."
             check2="Designed an intuitive interface that streamlines and accelerates the user's workflow."
             check3="Optimized for fast service by minimizing cognitive load on the user."
-            contentOverview="This project was integrated into a larger app, Zalo- a huge ecosystem platform, requiring adherence to Zalo’s design guidelines to ensure a seamless and consistent user experience.
-            Each mini-app is designed to meet the specific needs of the target users, with a focus on user convenience without overwhelming user cognitive load.
-            Aiming to younger users, I created an bright and lively interface that streamlines and accelerates the user's workflow.
-
- "
+            contentOverview={
+                <Overview
+                    r1="Integration with Zalo as a miniapp "
+                    s1=" Ensured a seamless and consistent user experience by following Zalo’s design guidelines."
+                    r2="Design mini-apps to meet the specific needs of the target users.	"
+                    s2="Focused on user convenience and avoided overwhelming the user’s cognitive load."
+                    r3="Optimized for fast service.	"
+                    s3="Minimized cognitive load on the user, resulting in a faster and more efficient service."
+                />
+            }
             img1={img1}
             img2={img2}
             img3={img3}
             img4={img4}
-            children1="Research, Visual design"
+            nextId="/projects/4"
+            previousId="/projects/2"
         >     <div className="rounded-xl overflow-hidden">
                 <Lottie animationData={vid1} loop={true} autoplay={true} />
             </div>

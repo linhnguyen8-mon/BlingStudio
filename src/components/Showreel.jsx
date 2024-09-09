@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTransform, motion, useAnimation } from "framer-motion";
 import img_1 from "../assets/screen/concept_01.png";
 import img_2 from "../assets/screen/kindergarden.png";
-import img_3 from "../assets/screen/concept_03.png";
+import img_3 from "../assets/screen/img_08.png";
 import img_4 from "../assets/screen/concept_04.png";
 import img_5 from "../assets/screen/Product.png";
 import img_6 from "../assets/screen/concept_06.png";
@@ -11,7 +11,8 @@ import img_8 from "../assets/screen/concept_08.png";
 import img_9 from "../assets/screen/_th.png";
 import img_10 from "../assets/screen/Travel.png";
 import img_11 from "../assets/screen/website.png";
-import img_12 from "../assets/img/img_12.png";
+import img_12 from "../assets/screen/TC_01.png";
+import LazyLoad from 'react-lazyload';
 
 const images = [
     img_1,
@@ -108,12 +109,15 @@ const Column = ({ images, className, animation }) => {
         >
             {images.map((img, index) => (
                 <div key={index} className="relative rounded-sm group ">
-                    <img
-                        className="object-cover rounded-md p-3 bg-background bg-opacity-40"
-                        src={img}
-                        alt={`Image ${index + 1}`}
-                        width="500px"
-                    />
+                    <LazyLoad>
+
+                        <img
+                            className="object-cover rounded-md p-3 bg-background bg-opacity-40"
+                            src={img}
+                            alt={`Image ${index + 1}`}
+                            width="500px"
+                        />
+                    </LazyLoad>
                 </div>
             ))}
         </motion.div>
