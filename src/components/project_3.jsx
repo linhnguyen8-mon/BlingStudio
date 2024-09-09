@@ -43,11 +43,12 @@ const Project3 = () => {
             contentOverview={
                 <Overview
                     r1="Integration with Zalo as a miniapp "
-                    s1=" Ensured a seamless and consistent user experience by following Zalo’s design guidelines."
-                    r2="Design mini-apps to meet the specific needs of the target users.	"
-                    s2="Focused on user convenience and avoided overwhelming the user’s cognitive load."
-                    r3="Optimized for fast service.	"
-                    s3="Minimized cognitive load on the user, resulting in a faster and more efficient service."
+                    s1="Followed Zalo’s design guidelines to ensure a seamless and consistent user experience.
+"
+
+                    r3="Optimized for intuitive experience	"
+                    s3="Minimized cognitive load by displaying the most important information first, hirerachy the infor in the right order.
+"
                 />
             }
             img1={img1}

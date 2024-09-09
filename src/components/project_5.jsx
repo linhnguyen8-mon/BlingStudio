@@ -37,11 +37,11 @@ const Project5 = () => {
             contentOverview={
                 <Overview
                     r1="Clear Guidance "
-                    s1="The application should feature a clean and intuitive design with straightforward instructions to guide users through the process."
+                    s1="Designed a clean, intuitive interface with straightforward instructions to guide users smoothly."
                     r2="Easy Flow from Selection to Purchase"
-                    s2="The user journey should be seamless, allowing clients to easily select their photo requirements and complete their purchase with minimal steps."
+                    s2="Streamlined the user journey for easy photo selection and purchase with minimal steps."
                     r3="Mobile Optimization"
-                    s3="The application must be fully optimized for mobile devices, enabling users to easily upload their photos directly from their phones."
+                    s3="Fully optimized the application for mobile devices, allowing users to upload photos directly from their phones."
                 />
             }
             timeline="Mar 2024 - Jul 2024"

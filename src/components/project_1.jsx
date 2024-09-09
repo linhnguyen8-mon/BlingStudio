@@ -41,8 +41,12 @@ const Project1 = () => {
                 }
                 contentOverview={
                     <Overview
-                        r1="Focused on tailoring the search experience to match individual preferences"
-                        s1="nj" />
+                        r1="Visual style to attract the younger generation"
+                        s1="Created vibrant, modern graphics to engage younger users."
+                        r2="Provide a personalized search experience"
+                        s2="Added filters and options for tailored search results.
+"
+                    />
                 }
                 timeline="Sep 2022 - Oct 2022"
                 check1="Designed custom icons and graphics to improve aesthetic appeal and user engagement."

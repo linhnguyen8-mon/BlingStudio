@@ -2,7 +2,7 @@ import React from 'react';
 
 const Overview = ({ r1, s1, r2, s2, r3, s3 }) => {
     return (
-        <div className="overflow-hidden rounded-md border-2 border-slate-500/50">
+        <div className="overflow-hidden rounded-md border-1 border-slate-500/50">
             <table className='w-full text-left '>
                 <thead>
                     <tr className="bg-gray-100/10 text-white/80 text-sm">
