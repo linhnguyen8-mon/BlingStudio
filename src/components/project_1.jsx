@@ -29,8 +29,8 @@ const Project1 = () => {
                 AboutThisProject={
                     <AboutThisProject
                         Type_of_project="Personal project"
-                        Service="A mobile app for booking co-working space"
-                        Client="Client needs to find suitable co-working spaces that meet their diverse needs"
+                        Service=" Show coworking spaces, allow booking and payment"
+                        Client="Freelancers/remote workers looking for a professional workspace outside home or coffee shops"
                     />
                 }
                 Skill={
@@ -41,17 +41,22 @@ const Project1 = () => {
                 }
                 contentOverview={
                     <Overview
-                        r1="Visual style to attract the younger generation"
-                        s1="Created vibrant, modern graphics to engage younger users."
-                        r2="Provide a personalized search experience"
-                        s2="Added filters and options for tailored search results.
+                        r1="Targest users: young generation"
+                        s1="Created vibrant, modern graphics to engage users."
+                        r2="Struggle and overwhelming with booking process"
+                        s2="Divide into manageable steps and clear guidances."
+                        r3="Need a personalized search experience"
+                        s3="Added filters and options for tailored search results.
 "
                     />
                 }
                 timeline="Sep 2022 - Oct 2022"
-                check1="Designed custom icons and graphics to improve aesthetic appeal and user engagement."
-                check2="Streamlined booking and reservation processes for coworking spaces with minimal steps and clear instructions."
-                check3="Tested the app on multiple devices to verify responsive behavior and functionality."
+                check1="Created custom icons and graphics to enhance the look and user interaction."
+                check2="Simplified the booking process with easy steps and clear instructions.
+"
+                check3="Tested the app on various devices to ensure it works well and is responsive.
+
+"
                 img1={img1}
                 img2={img2}
                 img3={img3}

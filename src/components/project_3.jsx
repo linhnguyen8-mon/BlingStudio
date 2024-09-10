@@ -27,7 +27,7 @@ const Project3 = () => {
                 <AboutThisProject
                     Type_of_project="Client project"
                     Service=" Developed a mini-app within the Zalo super app ecosystem."
-                    Client="Client find a solution in miniapp"
+                    Client=" Identified problems and provided solutions, typically through simple mini-app services."
                 />
             }
             Skill={
@@ -43,11 +43,19 @@ const Project3 = () => {
             contentOverview={
                 <Overview
                     r1="Integration with Zalo as a miniapp "
-                    s1="Followed Zalo’s design guidelines to ensure a seamless and consistent user experience.
+                    s1="Followed Zalo’s design guidelines for a smooth and consistent user experience.
+
 "
 
                     r3="Optimized for intuitive experience	"
-                    s3="Minimized cognitive load by displaying the most important information first, hirerachy the infor in the right order.
+                    s3="Reduced cognitive load by prioritizing key information and organizing it in a clear hierarchy.
+
+
+
+
+
+
+
 "
                 />
             }

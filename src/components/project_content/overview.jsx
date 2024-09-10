@@ -6,7 +6,7 @@ const Overview = ({ r1, s1, r2, s2, r3, s3 }) => {
             <table className='w-full text-left '>
                 <thead>
                     <tr className="bg-gray-100/10 text-white/80 text-sm">
-                        <th className='py-2 px-4 border-b border-b-gray-100/10'>Requirement</th>
+                        <th className='py-2 px-4 border-b border-b-gray-100/10'>Problem</th>
                         <th className='py-2 px-4 border-b border-b-gray-100/10'>Solution</th>
                     </tr>
                 </thead>
