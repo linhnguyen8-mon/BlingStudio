@@ -36,6 +36,19 @@ const Header = () => {
                 className=" h-[1000px] flex flex-col justify-center items-center relative"
                 id="home"
             >
+                {/* Background Columns */}
+                <div className="absolute p-24  inset-0 grid grid-cols-8 gap-8 opacity-15 z-10">
+                    {Array(8)
+                        .fill(0)
+                        .map((_, index) => (
+                            <div
+                                key={index}
+                                className="h-full border-l border-r border-white border-opacity-60 bg-gradient-to-b from-transparent via-white to-transparent"
+
+                            ></div>
+                        ))}
+                </div>
+
                 <img
                     src={dot}
                     alt=""
@@ -44,11 +57,11 @@ const Header = () => {
                 {/* Heading */}
                 <div className="flex container relative">
                     <div className=" flex grow flex-col items-center z-50 ">
-                        <Tag name="Available for new project"></Tag>
+                        <Tag name="Available for new projects"></Tag>
                         <p className="font-secondary italic text-white font-bold text-8xl ">
                             {skills[currentSkill]}
                         </p>
-                        <p className="text-primary font-medium opacity-80 text-7xl backdrop-blur-lg">
+                        <p className="text-white font-medium text-7xl">
                             for your next startup
                         </p>
                         <div className="flex gap-4 lg:flex mt-12 ">
@@ -63,7 +76,7 @@ const Header = () => {
                     <img src={svg} alt="" className="w-full" />
                 </LazyLoad>
 
-            </div>
+            </div >
         </>
     );
 };

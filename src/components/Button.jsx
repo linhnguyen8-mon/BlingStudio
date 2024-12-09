@@ -61,8 +61,8 @@ export const OutlineButton = ({ name, className, onClick, href }) => {
 export const Tag = ({ name }) => {
     return (
         <div className=" gap-3 inline-flex items-center justify-center mb-8 py-2 px-4 bg-[#fff] bg-opacity-30 hover:bg-opacity-70 border border-blue-200 border-opacity-30 rounded-full  ">
-            <div className="h-2 w-2 bg-emerald-500 rounded-full relative"> </div>
-            <p className=" text-md font-medium text-primary text-opacity-75">{name}</p>
+            <div className="h-2 w-2 bg-blue-950 rounded-full relative"> </div>
+            <p className=" text-md font-medium text-blue-950 text-opacity-75">{name}</p>
         </div>
     );
 };
