@@ -30,8 +30,8 @@ const Project2 = () => {
             AboutThisProject={
                 <AboutThisProject
                     Type_of_project="Client project"
-                    Service="Delivered services related to cloud integration and web development"
-                    Client="Client find the data storage and management solution that meets their needs"
+                    Service="Cloud integration and web development"
+                    Client="Users use web development to enhance their online platform"
                 />
             }
             Skill={
@@ -45,8 +45,11 @@ const Project2 = () => {
             }
             contentOverview={
                 <Overview
-                    r1="A sleek, tech-driven website for tech-savvy clients"
-                    s1="Used minimalistic design and bold headings to enhance visual appeal and simplified content for better navigation." />
+                    r1="Target clients: tech-savvy clients in technology industry"
+                    s1="Used minimalistic design and bold headings to enhance visual appeal and simplified content for better navigation."
+                    r2="Make a good experience for users"
+                    s2="Contruct the layout of element and the flow of content"
+                />
             }
             timeline="Aug 2023 - Nov 2023"
             check1="Developed a comprehensive flow & design system for 80+ screens."

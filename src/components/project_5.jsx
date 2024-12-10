@@ -19,13 +19,13 @@ const Project5 = () => {
             Month="March"
             Year="2024"
             nametag="mobile"
-            themeColor="bg-gradient-to-r from-indigo-900 to-blue-900"
+            themeColor="bg-gradient-to-r from-indigo-950 to-blue-950"
             buttonColor="bg-blue-500"
             AboutThisProject={
                 <AboutThisProject
                     Type_of_project="Client project"
-                    Service=" Create a service-focused website that minimizes visuals, enhances user experience, and is user-friendly."
-                    Client="Client find a passport generation solution that meets their needs"
+                    Service=" Resize, edit photo to use it in passport"
+                    Client=" Those submitting passports online or using their own photos"
                 />
             }
             Skill={
@@ -36,10 +36,10 @@ const Project5 = () => {
             }
             contentOverview={
                 <Overview
-                    r1="Clear Guidance "
+                    r1="Need a clear guidance for beginner "
                     s1="Designed a clean, intuitive interface with straightforward instructions to guide users smoothly."
                     r2="Easy Flow from Selection to Purchase"
-                    s2="Streamlined the user journey for easy photo selection and purchase with minimal steps."
+                    s2="Create procedure progress to easy photo selection and purchase with minimal steps."
                     r3="Mobile Optimization"
                     s3="Fully optimized the application for mobile devices, allowing users to upload photos directly from their phones."
                 />

@@ -27,7 +27,7 @@ const Project6 = () => {
                 <AboutThisProject
                     Type_of_project="Client project"
                     Service="VPS Server Hosting"
-                    Client="Client find a hoising to set up their servers"
+                    Client=" Clients looking for hosting services to set up and manage datas with their servers"
                 />
             }
             Skill={

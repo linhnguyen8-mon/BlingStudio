@@ -28,7 +28,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="w-full h-[1px] bg-textColor my-8"></div>
-                <span className="text-textColor">
+                <span className="text-textColor font-main font-medium">
                     @ 2024 - Designed and Developed by Linh
                 </span>
             </div>
@@ -41,7 +41,7 @@ export default Footer;
 const Icon = ({ img, href }) => {
     return (
         <a
-            className="w-16 h-16 border-textColor border rounded-full flex justify-center items-center opacity-50 hover:opacity-100 backdrop-blur-md"
+            className="w-16 h-16 border-backgroundCard border rounded-full flex justify-center items-center hover:border-textColor backdrop-blur-md"
             href={href}
             target="_blank"
             rel="noopener noreferrer"

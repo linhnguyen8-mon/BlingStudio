@@ -31,8 +31,8 @@ const Project4 = () => {
             AboutThisProject={
                 <AboutThisProject
                     Type_of_project="Personal project"
-                    Service="  Designed to highlight my expertise in UI/UX design and web development."
-                    Client="Various"
+                    Service=""
+                    Client=""
                 />
             }
             Skill={
