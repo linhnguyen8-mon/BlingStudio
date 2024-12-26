@@ -9,6 +9,7 @@ import img5 from '../assets/screen/concept_05.png'
 import img6 from '../assets/screen/concept_06.png'
 import img7 from '../assets/screen/concept_07.png'
 import img8 from '../assets/screen/concept_08.png'
+import img9 from '../assets/screen/LSM.png'
 
 import vid1 from '../assets/lottiefiles/bus.json'; // Lottie JSON animation file
 import vid2 from '../assets/lottiefiles/eng.json'; // Lottie JSON animation file
@@ -53,6 +54,7 @@ const Project4 = () => {
             img6={img6}
             img7={img7}
             img8={img8}
+            img9={img9}
             nextId="/projects/5"
             previousId="/projects/3"
         >

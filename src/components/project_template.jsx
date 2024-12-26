@@ -26,6 +26,7 @@ const ProjectTemplate = ({
     img6,
     img7,
     img8,
+    img9,
     children,
     nextId,
     previousId, AboutThisProject, Skill
@@ -164,6 +165,7 @@ const ProjectTemplate = ({
                                     {img6 && <Img src={img6} openModal={openModal} />}
                                     {img7 && <Img src={img7} openModal={openModal} />}
                                     {img8 && <Img src={img8} openModal={openModal} />}
+                                    {img9 && <Img src={img9} openModal={openModal} />}
                                 </div>
                             </Subtitle>
 
