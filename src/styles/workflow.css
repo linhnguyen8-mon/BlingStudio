@@ -1,0 +1,30 @@
+.bg-grid-pattern {
+    background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+        linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Add some animation for the cards */
+.workflow-card {
+    transition: all 0.3s ease;
+}
+
+.workflow-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Sticky note effect */
+.sticky-note {
+    position: relative;
+}
+
+.sticky-note::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 16px 16px 0;
+    border-style: solid;
+    border-color: #fef3c7 #ffffff;
+}

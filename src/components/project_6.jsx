@@ -63,7 +63,7 @@ const Project6 = () => {
             img6={img6}
             img7={img7}
             img8={img8}
-            nextId="/projects/1"
+            nextId="/projects/7"
             previousId="/projects/5"
         >
         </ProjectTemplate>

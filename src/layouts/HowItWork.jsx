@@ -4,6 +4,7 @@ import uxImage from '../assets/ux.png';
 import uiImage from '../assets/ui.png';
 import appImage from '../assets/app.png';
 import brandingImage from '../assets/branding.png';
+
 const HowItWork = () => {
     const [currentService, setCurrentService] = useState("");
     const services = [
@@ -14,32 +15,33 @@ const HowItWork = () => {
     ];
 
     return (
-        <div className="container my-24">
+        <div className="container">
             {/* Title Section */}
-            <div className="flex gap-6 mb-8 h-[60px] relative">
-                <p className="text-textColor font-primary text-5xl font-semibold">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-8 min-h-[60px] relative">
+                <p className="text-white font-primary text-3xl sm:text-4xl lg:text-5xl font-semibold">
                     We design
                 </p>
-                <p className="text-textColor font-secondary italic text-6xl font-bold">
+                <p className="text-white font-secondary italic text-4xl sm:text-5xl lg:text-6xl font-bold">
                     {currentService}
                 </p>
-                <div className="bg-textColor opacity-40 w-[350px] h-[3px] absolute bottom-0 left-60"></div>
+                <div className="bg-white opacity-40 w-full sm:w-[350px] h-[3px] absolute bottom-0 left-0 sm:left-60"></div>
             </div>
 
             {/* Services Section */}
-            <div className="flex justify-center gap-12 p-2 bg-white rounded-t-2xl backdrop-blur-2xl bg-opacity-20">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 bg-white rounded-2xl backdrop-blur-2xl bg-opacity-20">
                 {services.map((service, index) => (
                     <div
                         key={index}
-                        className="group relative flex flex-col items-center p-2 rounded-lg border border-blue-100 border-opacity-0 hover:ring-4 hover:ring-blue-100 hover:ring-offset-2 hover:bg-opacity-10 transition duration-300 ease-in-out cursor-pointer"
+                        className="group relative flex flex-col items-center p-4 rounded-lg border border-blue-100 border-opacity-0 hover:ring-4 hover:ring-blue-100 hover:ring-offset-2 hover:bg-opacity-10 transition duration-300 ease-in-out cursor-pointer"
                         onMouseEnter={() => setCurrentService(service.title)}
                         onMouseLeave={() => setCurrentService("")}
                     >
                         <img
                             src={service.illus}
                             alt={service.title}
-                            className="h-48 w-48 object-contain transform transition-transform group-hover:scale-110"
+                            className="h-32 sm:h-40 lg:h-48 w-auto object-contain transform transition-transform group-hover:scale-110"
                         />
+
                     </div>
                 ))}
             </div>

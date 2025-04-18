@@ -1,9 +1,9 @@
 import React from "react";
 import ProjectTemplate from "./project_template";
 
-import thumbnail from '../assets/screen/TC_02.png';
-import img1 from '../assets/screen/TC_01.png'
-import img2 from '../assets/screen/TC_02.png'
+import thumbnail from '../assets/screen/TC_01.png';
+import img1 from '../assets/screen/2_Site map.png'
+import img2 from '../assets/screen/2_Website.png'
 import img3 from '../assets/screen/TC_03.png'
 import img4 from '../assets/screen/TC_04.png'
 import img5 from '../assets/screen/TC_05.png'
@@ -21,7 +21,7 @@ const Project2 = () => {
     return (
         <ProjectTemplate
             project="Rova Website"
-            thumbnail={img1}
+            thumbnail={thumbnail}
             Month="Aug"
             Year="2023"
             nametag="website | mobile"
