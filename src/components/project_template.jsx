@@ -64,111 +64,115 @@ const ProjectTemplate = ({
     };
 
     return (
-        <div className={`${themeColor}`}>
+        <div className={`${themeColor} min-h-screen w-screen relative overflow-x-hidden`}>
+            {/* Extended background for bleeding effect */}
+            <div className={`${themeColor} absolute inset-0 -z-10`} style={{ width: '200vw', left: '-50%' }}></div>
+
             {/* Navigation for Next and Previous Project */}
             <div className="fixed inset-y-1/2 flex justify-between w-full px-8 transform -translate-y-1/2 z-50">
                 <div className="group flex align-middle items-center gap-3">
                     <button
                         onClick={handlePreviousProject}
-                        className="opacity-70 p-3 border-white bg-white bg-opacity-10 border-[0.5px] border-opacity-10 rounded-full group-hover:opacity-100"
+                        className="opacity-70 p-3 border-white bg-white bg-opacity-10 border-[0.5px] border-opacity-10 rounded-full group-hover:opacity-100 transition-all duration-300"
                     >
                         <img src={arrow} alt="" className="scale-125" />
                     </button>
-                    <p className="text-white text-[13px]  opacity-0 group-hover:opacity-50">
-
+                    <p className="text-white text-[13px] opacity-0 group-hover:opacity-50 transition-all duration-300">
                         Previous Project
                     </p>
                 </div>
                 <div className="group flex align-middle items-center gap-3">
-                    <p className="text-white text-[13px]  opacity-0 group-hover:opacity-50">
-
+                    <p className="text-white text-[13px] opacity-0 group-hover:opacity-50 transition-all duration-300">
                         Next Project
                     </p>
                     <button
                         onClick={handleNextProject}
-                        className="opacity-70 p-3 border-white bg-white bg-opacity-10 border-[0.5px] border-opacity-10 rounded-full group-hover:opacity-100"
+                        className="opacity-70 p-3 border-white bg-white bg-opacity-10 border-[0.5px] border-opacity-10 rounded-full group-hover:opacity-100 transition-all duration-300"
                     >
                         <img src={arrow} alt="" className="scale-125 rotate-180" />
                     </button>
                 </div>
-
             </div>
-            <div className="container p-8 pt- w-4/6 ">
+
+            {/* Main Content Wrapper */}
+            <div className="relative w-full">
                 {/* Navigation */}
-                <div className="flex w-full justify-between items-center z-50 p-4 pb-0">
+                <div className="flex w-full justify-between items-center z-50 p-4">
                     <button onClick={handleBackToHome} className="group flex gap-2 justify-center items-center">
                         <LazyLoad>
-                            <img src={bling} alt="Back to Home" className="h-8  filter brightness-75 hover:brightness-100 transition-all duration-100" />
+                            <img src={bling} alt="Back to Home" className="h-8 filter brightness-75 hover:brightness-100 transition-all duration-300" />
                         </LazyLoad>
-                        <div className=" opacity-0 group-hover:opacity-50 flex justify-center items-center">
+                        <div className="opacity-0 group-hover:opacity-50 flex justify-center items-center transition-all duration-300">
                             <img src={arrow} alt="" />
                             <div className="text-white font-main text-[13px]">Back to Home</div>
                         </div>
                     </button>
                 </div>
 
-                {/* Main Content */}
-                <div className="text-white mx-auto flex gap-12">
-                    {/* Picture + About project */}
-                    <div className="w-[30%] p-4 rounded-lg">
-                        <div className="w-full aspect-square bg-white rounded-lg overflow-hidden">
-                            <img
-                                src={thumbnail}
-                                alt="Event Thumbnail"
-                                className="w-full h-full object-cover object-bottom	 "
-                            />
-                        </div>
-                        <div className="flex flex-col gap-8 mt-4">
-                            <Subtitle name="About this project">
-                                {AboutThisProject}
-                            </Subtitle>
-
-                            {Skill}
-                        </div>
-                    </div>
-
-                    {/* Name + Overview + Detail Section */}
-                    <div className="w-[70%] mt-6">
-                        <Tag name={nametag} />
-                        <p className={"text-white mt-2 mb-4 text-5xl font-bold"}>{project}</p>
-
-                        <div className="flex gap-4 mb-8">
-                            <div className="h-12 w-12 border border-white border-opacity-10 rounded-md overflow-hidden">
-                                <div className="text-[11px] bg-white bg-opacity-10 flex justify-center items-center w-full">
-                                    {Month}
-                                </div>
-                                <div className="font-bold opacity-90 flex w-full justify-center items-center mt-1">
-                                    {Year}
-                                </div>
+                {/* Content Container */}
+                <div className="w-full sm:w-5/6 lg:w-11/12 xl:w-5/6 mx-auto px-4 sm:px-8 pb-20 relative">
+                    {/* Main Content */}
+                    <div className="text-white mx-auto flex flex-col md:flex-row gap-8 lg:gap-12">
+                        {/* Picture + About project */}
+                        <div className="w-full md:w-[40%] lg:w-[30%] p-4 rounded-lg">
+                            <div className="w-full aspect-square bg-white rounded-lg overflow-hidden shadow-lg">
+                                <img
+                                    src={thumbnail}
+                                    alt="Event Thumbnail"
+                                    className="w-full h-full object-cover object-bottom transition-transform duration-300 hover:scale-105"
+                                />
                             </div>
-                            <div className="inline-block gap-2">
-                                <p className="font-medium">Timeline</p>
-                                <p className="opacity-90">{timeline}</p>
+                            <div className="flex flex-col gap-8 mt-4">
+                                <Subtitle name="About this project">
+                                    {AboutThisProject}
+                                </Subtitle>
+
+                                {Skill}
                             </div>
                         </div>
-                        <div className="flex flex-col gap-8 ">
-                            <Subtitle name="What I do">
-                                <Check name={check1} />
-                                <Check name={check2} />
-                                <Check name={check3} />
-                            </Subtitle>
 
-                            <Subtitle name="Overview">{contentOverview}</Subtitle>
-                            {children}
-                            <Subtitle name="Screen">
-                                <div className="grid 2xl:grid-cols-3  xl:grid-cols-2 gap-2 ">
-                                    {img1 && <Img src={img1} openModal={openModal} />}
-                                    {img2 && <Img src={img2} openModal={openModal} />}
-                                    {img3 && <Img src={img3} openModal={openModal} />}
-                                    {img4 && <Img src={img4} openModal={openModal} />}
-                                    {img5 && <Img src={img5} openModal={openModal} />}
-                                    {img6 && <Img src={img6} openModal={openModal} />}
-                                    {img7 && <Img src={img7} openModal={openModal} />}
-                                    {img8 && <Img src={img8} openModal={openModal} />}
-                                    {img9 && <Img src={img9} openModal={openModal} />}
+                        {/* Name + Overview + Detail Section */}
+                        <div className="w-full md:w-[60%] lg:w-[70%] mt-6">
+                            <Tag name={nametag} />
+                            <p className={"text-white mt-2 mb-4 text-4xl md:text-5xl font-bold"}>{project}</p>
+
+                            <div className="flex gap-4 mb-8">
+                                <div className="h-12 w-12 border border-white border-opacity-10 rounded-md overflow-hidden backdrop-blur-sm">
+                                    <div className="text-[11px] bg-white bg-opacity-10 flex justify-center items-center w-full">
+                                        {Month}
+                                    </div>
+                                    <div className="font-bold opacity-90 flex w-full justify-center items-center mt-1">
+                                        {Year}
+                                    </div>
                                 </div>
-                            </Subtitle>
+                                <div className="inline-block gap-2">
+                                    <p className="font-medium">Timeline</p>
+                                    <p className="opacity-90">{timeline}</p>
+                                </div>
+                            </div>
+                            <div className="flex flex-col gap-8">
+                                <Subtitle name="What I do">
+                                    <Check name={check1} />
+                                    <Check name={check2} />
+                                    <Check name={check3} />
+                                </Subtitle>
 
+                                <Subtitle name="Overview">{contentOverview}</Subtitle>
+                                {children}
+                                <Subtitle name="Screen">
+                                    <div className="grid 2xl:grid-cols-3 xl:grid-cols-2 gap-4">
+                                        {img1 && <Img src={img1} openModal={openModal} />}
+                                        {img2 && <Img src={img2} openModal={openModal} />}
+                                        {img3 && <Img src={img3} openModal={openModal} />}
+                                        {img4 && <Img src={img4} openModal={openModal} />}
+                                        {img5 && <Img src={img5} openModal={openModal} />}
+                                        {img6 && <Img src={img6} openModal={openModal} />}
+                                        {img7 && <Img src={img7} openModal={openModal} />}
+                                        {img8 && <Img src={img8} openModal={openModal} />}
+                                        {img9 && <Img src={img9} openModal={openModal} />}
+                                    </div>
+                                </Subtitle>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -176,7 +180,7 @@ const ProjectTemplate = ({
 
             {/* Modal for Image Expansion */}
             {modalSrc && <Modal src={modalSrc} onClose={closeModal} />}
-        </div>
+        </div >
     );
 };
 
@@ -184,20 +188,20 @@ export default ProjectTemplate;
 
 // Image Component with Modal Trigger
 const Img = ({ src, height = "h-[240px]", openModal }) => (
-    <div className="relative group  bg-white bg-opacity-10 border-[0.5px] border-white border-opacity-10 rounded-lg p-3">
+    <div className="relative group bg-white bg-opacity-10 border-[0.5px] border-white border-opacity-10 rounded-lg p-3 transition-all duration-300 hover:bg-opacity-20">
         <LazyLoad>
             <img
                 src={src}
                 alt="Preview"
-                className={`w-full object-cover rounded-md ${height}`}
+                className={`w-full object-cover rounded-md ${height} transition-transform duration-300 group-hover:scale-[1.02]`}
                 loading="lazy"
             />
         </LazyLoad>
         <div
-            className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
             onClick={() => openModal(src)}
         >
-            <div className="backdrop-blur-sm bg-black bg-opacity-40 shadow-md rounded-full p-4 cursor-pointer absolute top-4 right-4 hover:bg-opacity-60">
+            <div className="backdrop-blur-sm bg-black bg-opacity-40 shadow-md rounded-full p-4 cursor-pointer absolute top-4 right-4 hover:bg-opacity-60 transition-all duration-300">
                 <img src={expandIcon} alt="Expand" className="h-6 w-6" />
             </div>
         </div>
@@ -206,7 +210,7 @@ const Img = ({ src, height = "h-[240px]", openModal }) => (
 const Tag = ({ name, themeColor }) => (
     <div className=" w-fit">
         <div
-            className={`relative z-10 flex w-full cursor-pointer items-center overflow-hidden rounded-full ${themeColor} animated-border border-[0.5px] opacity-60`}
+            className={`relative z-10 flex w-full cursor-pointer items-center overflow rounded-full ${themeColor} animated-border border-[0.5px] opacity-60`}
             style={{ borderColor: themeColor }} // Apply dynamic border color
         >
             <div className={`relative z-20 flex w-full  bg-${themeColor} p-0.5 px-3 text-[12px] `}>

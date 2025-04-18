@@ -6,14 +6,15 @@ import img3 from "../assets/screen/Passport_thumbnail.png";
 import img4 from "../assets/screen/Concept.png";
 import img6 from "../assets/screen/VPS_thumbnail.png";
 import img5 from "../assets/screen/Visa_genegation.png";
+import img7 from "../assets/screen/7_05.png";
 const Service = () => {
     return (
-        <div className="container mx-auto relative my-40 mt-60">
+        <div className="container mx-auto relative my-40 md:my-8 mt-60">
             <div className="font-medium leading-loose flex flex-col gap-2 mb-8">
-                <p className="text-textColor text-5xl">
+                <p className="text-white text-5xl sm:text-4xl">
                     Helping startups create
                 </p>
-                <p className="text-textColor font-secondary italic text-6xl font-bold">
+                <p className="text-white font-secondary italic text-6xl sm:text-5xl font-bold">
                     exceptional design solutions
                 </p>
             </div >
@@ -24,7 +25,7 @@ const Service = () => {
 
 const ServiceList = () => {
     return (
-        <div className="pt-8 grid grid-cols-3 gap-8 ">
+        <div className="pt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
             <ServiceItem
                 imageSrc={img1}
                 heading="Coworking space"
@@ -60,6 +61,12 @@ const ServiceList = () => {
                 href="/projects/6"
                 label="mobile | website"
                 imageSrc={img6}
+            />
+            <ServiceItem
+                heading="Edtech Webapp"
+                href="/projects/7"
+                label="mobile | website"
+                imageSrc={img7}
             />
         </div>
     );

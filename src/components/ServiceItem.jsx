@@ -6,8 +6,8 @@ const ServiceItem = ({ heading, label, href, imageSrc }) => {
     return (
         <Link
             to={href}
-            className="relative group p-2 bg-white bg-opacity-0 
-            hover:bg-[#fff] hover:bg-opacity-100 rounded-2xl flex flex-col gap-4 hover:shadow-[rgba(7,_65,_210,_0.02)_0px_9px_20px] 
+            className="relative group p-1 sm:p-2 bg-white bg-opacity-0 
+            hover:bg-[#fff] hover:bg-opacity-100 rounded-2xl flex flex-col gap-2 sm:gap-4 hover:shadow-[rgba(7,_65,_210,_0.02)_0px_9px_20px] 
             border border-blue-100 border-opacity-0 
             hover:ring-offset-2 hover:ring-2 ring-blue-100	
             transition duration-300 ease-in-out"
