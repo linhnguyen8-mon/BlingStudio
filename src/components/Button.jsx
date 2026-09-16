@@ -4,9 +4,9 @@ const BaseButton = ({ children, className, onClick, href }) => {
     const Component = href ? "a" : "button";
     const props = href ? { href } : { onClick };
     return (
-        <div className="p-[8px] bg-background bg-opacity-20 hover:bg-opacity-50 rounded-full border border-blue-100 border-opacity-20 transition duration-300 ease-in-out ">
+        <div className="p-[8px] bg-background bg-opacity-20 hover:bg-opacity-50 rounded-full border border-blue-100 border-opacity-20 transition duration-base ease-out-soft ">
             <Component
-                className={`inline-flex items-center justify-center h-14 px-6 rounded-full font-main font-semibold  bg-backgroundCardHover ${className}
+                className={`inline-flex items-center justify-center h-12 md:h-14 px-5 md:px-6 text-sm md:text-base rounded-full font-main font-semibold  bg-backgroundCardHover ${className}
             hover:shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] 
             `}
                 target="_blank"
@@ -60,9 +60,9 @@ export const OutlineButton = ({ name, className, onClick, href }) => {
 
 export const Tag = ({ name }) => {
     return (
-        <div className=" gap-3 inline-flex items-center justify-center mb-8 py-2 px-4 bg-[#fff] bg-opacity-30 hover:bg-opacity-70 border border-blue-200 border-opacity-30 rounded-full  ">
+        <div className="gap-3 inline-flex items-center justify-center mb-8 py-2 px-4 bg-[#fff] bg-opacity-30 hover:bg-opacity-70 border border-blue-200 border-opacity-30 rounded-full transition duration-base ease-out-soft">
             <div className="h-2 w-2 bg-blue-950 rounded-full relative"> </div>
-            <p className=" text-md font-medium text-blue-950 text-opacity-75">{name}</p>
+            <p className=" text-sm md:text-md font-medium text-blue-950 text-opacity-75">{name}</p>
         </div>
     );
 };

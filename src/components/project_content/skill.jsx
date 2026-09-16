@@ -38,9 +38,9 @@ const Architecture = () => (
 )
 
 const Tag = ({ img, name }) => (
-    <div className="flex items-center gap-2 px-3 py-1 text-slate-50  bg-slate-50/10 hover:bg-slate-50/30 min-w-fit">
-        <img src={img} alt="" />
-        {name}
+    <div className="flex items-center gap-2 px-3 py-1 text-slate-50 bg-slate-50/10 hover:bg-slate-50/30 min-w-0 transition duration-base ease-out-soft">
+        <img src={img} alt="" className="shrink-0" />
+        <span className="break-words">{name}</span>
     </div>
 );
 

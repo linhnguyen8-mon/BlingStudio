@@ -1,9 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
-import { FilledButton, OutlineButton, Tag } from "../components/Button";
+import React, { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { OutlineButton, Tag } from "../components/Button";
+import { usePresets } from "../motion";
 import dot from "../assets/dot.svg";
 import { scroller } from "react-scroll";
-import svg from '../assets/svg.png'
-import LazyLoad from 'react-lazyload';
+import FluidBackground from "../components/FluidBackground";
+import HeroColumns from "../components/HeroColumns";
 
 const Header = () => {
     const skills = [
@@ -12,10 +14,11 @@ const Header = () => {
         "Build user-centric products",
     ];
     const [currentSkill, handleSkill] = useState(0);
+    const presets = usePresets();
     useEffect(() => {
         const interval = setInterval(() => {
             handleSkill((prevSkill) => (prevSkill + 1) % skills.length);
-        }, 1000);
+        }, 2200);
 
         return () => clearInterval(interval);
     }, [skills.length]);
@@ -33,38 +36,37 @@ const Header = () => {
         <>
             {/* Content */}
             <div
-                className=" h-[1000px] flex flex-col justify-center items-center relative"
+                className="min-h-[100svh] flex flex-col justify-center items-center relative px-4 overflow-x-clip pb-12 md:pb-32 lg:pb-40"
                 id="home"
             >
-                {/* Background Columns */}
-                <div className="absolute p-24  inset-0 grid grid-cols-8 gap-8 opacity-15 z-10">
-                    {Array(8)
-                        .fill(0)
-                        .map((_, index) => (
-                            <div
-                                key={index}
-                                className="h-full border-l border-r border-white border-opacity-60 bg-gradient-to-b from-transparent via-white to-transparent"
-
-                            ></div>
-                        ))}
-                </div>
+                <HeroColumns />
 
                 <img
                     src={dot}
                     alt=""
-                    className="absolute top-0 left-0 scale-150"
+                    className="pointer-events-none absolute top-0 left-0 scale-150"
                 />
                 {/* Heading */}
-                <div className="flex container relative">
-                    <div className=" flex grow flex-col items-center z-50 ">
+                <div className="pointer-events-none flex container relative z-20">
+                    <div className=" flex grow flex-col items-center z-20 text-center max-w-5xl mx-auto">
                         <Tag name="Available for new projects"></Tag>
-                        <p className="font-secondary italic text-white font-bold text-8xl ">
-                            {skills[currentSkill]}
-                        </p>
-                        <p className="text-white font-medium text-7xl">
+                        <div className="relative w-full font-secondary italic text-white font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight px-2">
+                            <AnimatePresence mode="wait">
+                                <motion.p
+                                    key={skills[currentSkill]}
+                                    variants={presets.crossfade}
+                                    initial="initial"
+                                    animate="animate"
+                                    exit="exit"
+                                >
+                                    {skills[currentSkill]}
+                                </motion.p>
+                            </AnimatePresence>
+                        </div>
+                        <p className="text-white font-medium text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight px-2">
                             for your next startup
                         </p>
-                        <div className="flex gap-4 lg:flex mt-12 ">
+                        <div className="pointer-events-auto flex gap-4 mt-8 md:mt-12 ">
                             <OutlineButton
                                 name="View my project"
                                 onClick={scrollToWorks}
@@ -72,9 +74,7 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-                <LazyLoad className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
-                    <img src={svg} alt="" className="w-full" />
-                </LazyLoad>
+                <FluidBackground />
 
             </div >
         </>

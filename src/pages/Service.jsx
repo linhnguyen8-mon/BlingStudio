@@ -6,14 +6,17 @@ import img3 from "../assets/screen/Passport_thumbnail.png";
 import img4 from "../assets/screen/Concept.png";
 import img6 from "../assets/screen/VPS_thumbnail.png";
 import img5 from "../assets/screen/Visa_genegation.png";
+import img7 from "../assets/screen/7_05.png";
+import { catiiThumb } from "../components/catii/assets";
+import { drawStepThumb } from "../components/draw-step-by-step/assets";
 const Service = () => {
     return (
-        <div className="container mx-auto relative my-40 mt-60">
-            <div className="font-medium leading-loose flex flex-col gap-2 mb-8">
-                <p className="text-textColor text-5xl">
+        <div className="container mx-auto relative my-16 md:my-24 lg:my-40 lg:mt-60">
+            <div className="font-medium leading-tight md:leading-loose flex flex-col gap-2 mb-8">
+                <p className="text-textColor text-3xl sm:text-4xl md:text-5xl">
                     Helping startups create
                 </p>
-                <p className="text-textColor font-secondary italic text-6xl font-bold">
+                <p className="text-textColor font-secondary italic text-4xl sm:text-5xl md:text-6xl font-bold">
                     exceptional design solutions
                 </p>
             </div >
@@ -24,7 +27,7 @@ const Service = () => {
 
 const ServiceList = () => {
     return (
-        <div className="pt-8 grid grid-cols-3 gap-8 ">
+        <div className="pt-8 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 ">
             <ServiceItem
                 imageSrc={img1}
                 heading="Coworking space"
@@ -60,6 +63,24 @@ const ServiceList = () => {
                 href="/projects/6"
                 label="mobile | website"
                 imageSrc={img6}
+            />
+            <ServiceItem
+                heading="Edtech Webapp"
+                href="/projects/7"
+                label="mobile | website"
+                imageSrc={img7}
+            />
+            <ServiceItem
+                heading="Catii"
+                href="/projects/8"
+                label="animation | mobile"
+                imageSrc={catiiThumb}
+            />
+            <ServiceItem
+                heading="Drawing app"
+                href="/projects/9"
+                label="mobile | tablet"
+                imageSrc={drawStepThumb}
             />
         </div>
     );

@@ -1,0 +1,336 @@
+.notes-system {
+    --notes-ink: #25272d;
+    --notes-muted: #727780;
+    --notes-panel: #f1f3f4;
+    --notes-grid: rgba(92, 105, 117, 0.035);
+    color: var(--notes-ink);
+}
+
+.notes-card {
+    position: relative;
+    height: 100%;
+    margin-top: 1rem;
+    padding: 18px;
+    border: 0;
+    border-radius: 14px;
+    color: var(--notes-ink);
+    background: #f3f4f5;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.notes-card:hover {
+    background: #fff;
+}
+
+.notes-card--upcoming {
+    cursor: default;
+    pointer-events: none;
+    background: #eff8ff;
+}
+
+.notes-card--upcoming:hover {
+    background: #eff8ff;
+}
+
+.notes-card__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.notes-card__badge {
+    padding: 4px 8px;
+    border-radius: 999px;
+    color: #1751bd;
+    background: rgba(23, 81, 189, 0.1);
+    font-family: Inter, sans-serif;
+    font-size: 11px;
+    font-weight: 650;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.notes-card:focus-visible {
+    outline: 2px solid var(--notes-ink);
+    outline-offset: 3px;
+}
+
+.notes-card__number {
+    color: #9a9ea4;
+    font-family: Inter, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.notes-card__title {
+    margin: 10px 0 22px;
+    font-family: Inter, sans-serif;
+    font-size: clamp(22px, 2.2vw, 30px);
+    font-weight: 720;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    white-space: nowrap;
+}
+
+.notes-card__preview {
+    min-height: 116px;
+    padding: 17px 18px;
+    border: 1px solid rgba(37, 39, 45, 0.08);
+    border-radius: 7px;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.notes-grid {
+    background-color: #fff;
+    background-image:
+        linear-gradient(var(--notes-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--notes-grid) 1px, transparent 1px);
+    background-size: 16px 16px;
+}
+
+.note-sticker {
+    --sticker-bg: #ead6ff;
+    --sticker-ink: #6f2bd9;
+    --sticker-line: rgba(111, 43, 217, 0.12);
+    color: var(--sticker-ink);
+    background-color: var(--sticker-bg);
+    border-color: var(--sticker-line);
+}
+
+.note-sticker--lavender {
+    --sticker-bg: #ead6ff;
+    --sticker-ink: #7627c8;
+    --sticker-line: rgba(118, 39, 200, 0.13);
+}
+
+.note-sticker--sky {
+    --sticker-bg: #c8ddff;
+    --sticker-ink: #1751bd;
+    --sticker-line: rgba(23, 81, 189, 0.13);
+}
+
+.note-sticker--butter {
+    --sticker-bg: #ffeeb0;
+    --sticker-ink: #a45a00;
+    --sticker-line: rgba(164, 90, 0, 0.14);
+}
+
+.note-sticker--mint {
+    --sticker-bg: #c2f0d0;
+    --sticker-ink: #08733a;
+    --sticker-line: rgba(8, 115, 58, 0.13);
+}
+
+.note-sticker--peach {
+    --sticker-bg: #ffd5b0;
+    --sticker-ink: #a64813;
+    --sticker-line: rgba(166, 72, 19, 0.13);
+}
+
+.note-sticker--rose {
+    --sticker-bg: #ffcce0;
+    --sticker-ink: #ad376c;
+    --sticker-line: rgba(173, 55, 108, 0.13);
+}
+
+.notes-sheet {
+    min-height: min(720px, 78vh);
+    max-height: 85vh;
+    padding: 34px;
+    overflow-y: auto;
+}
+
+.notes-sheet__header {
+    max-width: 680px;
+    margin-bottom: 30px;
+}
+
+.notes-sheet__header h2 {
+    margin: 0;
+    color: var(--notes-ink);
+    font-family: Inter, sans-serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 720;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+}
+
+.notes-sheet__header p {
+    max-width: 62ch;
+    margin: 10px 0 0;
+    color: var(--notes-muted);
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.notes-sheet__header .notes-sheet__eyebrow {
+    margin: 10px 0 0;
+    color: var(--notes-muted);
+    font-size: 12px;
+    font-weight: 650;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.checklist-detail {
+    max-width: 640px;
+}
+
+.checklist-swimlane {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.checklist-swimlane svg {
+    width: 100%;
+    min-width: 720px;
+    height: auto;
+    display: block;
+}
+
+.checklist-node {
+    cursor: pointer;
+}
+
+.checklist-node:focus {
+    outline: none;
+}
+
+.checklist-node__box {
+    fill: #ffffff;
+    stroke: #25272d;
+    stroke-width: 1;
+    transition: fill 160ms ease, stroke 160ms ease;
+}
+
+.checklist-node:hover .checklist-node__box,
+.checklist-node:focus-visible .checklist-node__box {
+    fill: #f7f8f8;
+    stroke: #a64813;
+}
+
+.checklist-node--selected .checklist-node__box {
+    fill: rgba(166, 72, 19, 0.08);
+    stroke: #a64813;
+}
+
+.research-methods {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 36px;
+}
+
+.research-section__heading {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 12px;
+    color: var(--notes-ink);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.research-section__methods {
+    display: grid;
+    gap: 10px;
+}
+
+.research-method {
+    padding: 16px 17px;
+    border: 1px solid;
+    border-radius: 7px;
+    background-color: var(--sticker-bg);
+}
+
+.research-method h4 {
+    margin: 0 0 5px;
+    color: inherit;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.research-method p {
+    margin: 0;
+    color: color-mix(in srgb, var(--sticker-ink) 68%, #25272d);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.checklist-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px;
+}
+
+.checklist-column {
+    display: grid;
+    align-content: start;
+    gap: 12px;
+}
+
+.checklist-column > h3 {
+    margin: 0 0 6px;
+    color: var(--notes-ink);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.checklist-sticker {
+    overflow: hidden;
+    border: 1px solid;
+    border-radius: 7px;
+    background-color: var(--sticker-bg);
+}
+
+.checklist-sticker h4 {
+    margin: 0;
+    padding: 14px 16px 10px;
+    color: inherit;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.checklist-sticker__item {
+    padding: 9px 16px;
+    color: color-mix(in srgb, var(--sticker-ink) 62%, #25272d);
+    font-size: 13px;
+    line-height: 1.48;
+}
+
+.checklist-sticker__item:last-child {
+    padding-bottom: 14px;
+}
+
+.checklist-sticker__item strong {
+    color: var(--notes-ink);
+    font-weight: 700;
+}
+
+@media (max-width: 767px) {
+    .notes-card {
+        margin-top: 0.5rem;
+        padding: 14px;
+    }
+
+    .notes-sheet {
+        min-height: 70vh;
+        padding: 24px 16px;
+    }
+
+    .research-methods,
+    .checklist-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .notes-card {
+        transition-duration: 0.01ms;
+    }
+}

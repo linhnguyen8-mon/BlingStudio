@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UX/UI Checklist · Swimlane</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400&family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-paper:   #f1f3f4;
+      --color-ink:     #25272d;
+      --color-muted:   #636a73;
+      --color-accent:  #a64813;
+      --font-sans:     'Geist', system-ui, sans-serif;
+      --font-serif:    'Instrument Serif', 'Noto Serif KR', serif;
+      --font-mono:     'Geist Mono', ui-monospace, monospace;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-paper);
+      color: var(--color-ink);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+    }
+
+    .frame { max-width: 1280px; width: 100%; }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--color-ink);
+      margin-bottom: 1.5rem;
+    }
+
+    svg { width: 100%; min-width: 900px; display: block; }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <p class="eyebrow">Swimlane · Quality review</p>
+    <h1>UX/UI Checklist</h1>
+
+    <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ux-ui-checklist-title ux-ui-checklist-desc">
+      <title id="ux-ui-checklist-title">UX/UI Checklist</title>
+      <desc id="ux-ui-checklist-desc">Two-lane quality checklist: UX reviews structure, flow, communication, and inclusion first; UI then reviews hierarchy, layout, components, and brand.</desc>
+      <defs>
+        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#636a73"/></marker>
+        <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#a64813"/></marker>
+        <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#1751bd"/></marker>
+      </defs>
+
+      <rect width="100%" height="100%" fill="#f1f3f4"/>
+
+      <!-- Lane zones -->
+      <rect x="80" y="36" width="520" height="600" rx="8" fill="rgba(37,39,45,0.03)" stroke="rgba(37,39,45,0.12)" stroke-width="1"/>
+      <rect x="680" y="36" width="520" height="600" rx="8" fill="rgba(37,39,45,0.03)" stroke="rgba(37,39,45,0.12)" stroke-width="1"/>
+
+      <!-- In-lane connectors -->
+      <line x1="340" y1="212" x2="340" y2="252" stroke="#636a73" stroke-width="1" marker-end="url(#arrow)"/>
+      <line x1="340" y1="348" x2="340" y2="388" stroke="#636a73" stroke-width="1" marker-end="url(#arrow)"/>
+      <line x1="340" y1="484" x2="340" y2="524" stroke="#636a73" stroke-width="1" marker-end="url(#arrow)"/>
+      <line x1="940" y1="212" x2="940" y2="252" stroke="#636a73" stroke-width="1" marker-end="url(#arrow)"/>
+      <line x1="940" y1="348" x2="940" y2="388" stroke="#636a73" stroke-width="1" marker-end="url(#arrow)"/>
+      <line x1="940" y1="484" x2="940" y2="524" stroke="#636a73" stroke-width="1" marker-end="url(#arrow)"/>
+
+      <!-- Lane headers -->
+      <text x="340" y="60" fill="#636a73" font-size="8" font-weight="500" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.18em">UX</text>
+      <text x="340" y="76" fill="#25272d" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Clarity &amp; flow</text>
+      <text x="940" y="60" fill="#636a73" font-size="8" font-weight="500" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.18em">UI</text>
+      <text x="940" y="76" fill="#25272d" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Visual &amp; polish</text>
+
+      <!-- Focal: review UX first, then UI -->
+      <rect x="560" y="52" width="160" height="32" rx="6" fill="#f1f3f4"/>
+      <rect x="560" y="52" width="160" height="32" rx="6" fill="rgba(166,72,19,0.08)" stroke="#a64813" stroke-width="1"/>
+      <text x="640" y="72" fill="#a64813" font-size="8" font-weight="500" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.12em">THEN UI</text>
+
+      <!-- UX nodes -->
+      <rect x="180" y="116" width="320" height="96" rx="6" fill="#f1f3f4"/>
+      <rect x="180" y="116" width="320" height="96" rx="6" fill="#ffffff" stroke="#25272d" stroke-width="1"/>
+      <rect x="188" y="124" width="28" height="12" rx="2" fill="transparent" stroke="rgba(37,39,45,0.40)" stroke-width="0.8"/>
+      <text x="202" y="133" fill="rgba(37,39,45,0.8)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">01</text>
+      <text x="340" y="166" fill="#25272d" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Structure</text>
+      <text x="340" y="182" fill="#636a73" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">ia · content · findability</text>
+
+      <rect x="180" y="252" width="320" height="96" rx="6" fill="#f1f3f4"/>
+      <rect x="180" y="252" width="320" height="96" rx="6" fill="#ffffff" stroke="#25272d" stroke-width="1"/>
+      <rect x="188" y="260" width="28" height="12" rx="2" fill="transparent" stroke="rgba(37,39,45,0.40)" stroke-width="0.8"/>
+      <text x="202" y="269" fill="rgba(37,39,45,0.8)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">02</text>
+      <text x="340" y="302" fill="#25272d" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Flow</text>
+      <text x="340" y="318" fill="#636a73" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">nav · user flow</text>
+
+      <rect x="180" y="388" width="320" height="96" rx="6" fill="#f1f3f4"/>
+      <rect x="180" y="388" width="320" height="96" rx="6" fill="#ffffff" stroke="#25272d" stroke-width="1"/>
+      <rect x="188" y="396" width="28" height="12" rx="2" fill="transparent" stroke="rgba(37,39,45,0.40)" stroke-width="0.8"/>
+      <text x="202" y="405" fill="rgba(37,39,45,0.8)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">03</text>
+      <text x="340" y="438" fill="#25272d" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Communication</text>
+      <text x="340" y="454" fill="#636a73" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">clarity · feedback · errors</text>
+
+      <rect x="180" y="524" width="320" height="96" rx="6" fill="#f1f3f4"/>
+      <rect x="180" y="524" width="320" height="96" rx="6" fill="#ffffff" stroke="#25272d" stroke-width="1"/>
+      <rect x="188" y="532" width="28" height="12" rx="2" fill="transparent" stroke="rgba(37,39,45,0.40)" stroke-width="0.8"/>
+      <text x="202" y="541" fill="rgba(37,39,45,0.8)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">04</text>
+      <text x="340" y="574" fill="#25272d" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Inclusion</text>
+      <text x="340" y="590" fill="#636a73" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">a11y · responsive</text>
+
+      <!-- UI nodes -->
+      <rect x="780" y="116" width="320" height="96" rx="6" fill="#f1f3f4"/>
+      <rect x="780" y="116" width="320" height="96" rx="6" fill="#ffffff" stroke="#25272d" stroke-width="1"/>
+      <rect x="788" y="124" width="28" height="12" rx="2" fill="transparent" stroke="rgba(37,39,45,0.40)" stroke-width="0.8"/>
+      <text x="802" y="133" fill="rgba(37,39,45,0.8)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">01</text>
+      <text x="940" y="166" fill="#25272d" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Hierarchy</text>
+      <text x="940" y="182" fill="#636a73" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">hierarchy · type</text>
+
+      <rect x="780" y="252" width="320" height="96" rx="6" fill="#f1f3f4"/>
+      <rect x="780" y="252" width="320" height="96" rx="6" fill="#ffffff" stroke="#25272d" stroke-width="1"/>
+      <rect x="788" y="260" width="28" height="12" rx="2" fill="transparent" stroke="rgba(37,39,45,0.40)" stroke-width="0.8"/>
+      <text x="802" y="269" fill="rgba(37,39,45,0.8)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">02</text>
+      <text x="940" y="302" fill="#25272d" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Layout</text>
+      <text x="940" y="318" fill="#636a73" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">space · contrast</text>
+
+      <rect x="780" y="388" width="320" height="96" rx="6" fill="#f1f3f4"/>
+      <rect x="780" y="388" width="320" height="96" rx="6" fill="#ffffff" stroke="#25272d" stroke-width="1"/>
+      <rect x="788" y="396" width="28" height="12" rx="2" fill="transparent" stroke="rgba(37,39,45,0.40)" stroke-width="0.8"/>
+      <text x="802" y="405" fill="rgba(37,39,45,0.8)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">03</text>
+      <text x="940" y="438" fill="#25272d" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Components</text>
+      <text x="940" y="454" fill="#636a73" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">components · motion</text>
+
+      <rect x="780" y="524" width="320" height="96" rx="6" fill="#f1f3f4"/>
+      <rect x="780" y="524" width="320" height="96" rx="6" fill="#ffffff" stroke="#25272d" stroke-width="1"/>
+      <rect x="788" y="532" width="28" height="12" rx="2" fill="transparent" stroke="rgba(37,39,45,0.40)" stroke-width="0.8"/>
+      <text x="802" y="541" fill="rgba(37,39,45,0.8)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">04</text>
+      <text x="940" y="574" fill="#25272d" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Brand</text>
+      <text x="940" y="590" fill="#636a73" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">icons · branding</text>
+
+      <!-- Legend -->
+      <line x1="80" y1="656" x2="1200" y2="656" stroke="rgba(37,39,45,0.10)" stroke-width="0.8"/>
+      <text x="80" y="672" fill="#636a73" font-size="8" font-family="'Geist Mono', monospace" letter-spacing="0.14em">LEGEND</text>
+
+      <rect x="80" y="684" width="14" height="10" rx="2" fill="#ffffff" stroke="#25272d" stroke-width="1"/>
+      <text x="100" y="693" fill="#636a73" font-size="8.5" font-family="'Geist', sans-serif">Review group</text>
+
+      <line x1="248" y1="689" x2="276" y2="689" stroke="#636a73" stroke-width="1" marker-end="url(#arrow)"/>
+      <text x="284" y="693" fill="#636a73" font-size="8.5" font-family="'Geist', sans-serif">Within-lane order</text>
+
+      <rect x="456" y="684" width="14" height="10" rx="2" fill="rgba(166,72,19,0.08)" stroke="#a64813" stroke-width="1"/>
+      <text x="476" y="693" fill="#636a73" font-size="8.5" font-family="'Geist', sans-serif">Then interface</text>
+    </svg>
+  </div>
+</body>
+</html>

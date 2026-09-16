@@ -66,7 +66,7 @@ const Project1 = () => {
                 img7={img7}
                 img8={img8}
                 nextId="/projects/2"
-                previousId="/projects/6"
+                previousId="/projects/9"
             >
                 <div className="rounded-xl overflow-hidden">
                     <Lottie animationData={second} loop={true} autoplay={true} />
